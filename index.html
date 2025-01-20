@@ -3,55 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasanmit Café - Order</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Pasanmit Cafe - Order System</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>☕ Pasanmit Café</h1>
+        <h1>🛒 Pasanmit Cafe</h1>
 
-        <!-- เลือกโต๊ะ -->
-        <div class="table-selection">
-            <label>📍 หมายเลขโต๊ะ:</label>
-            <input type="number" id="table-number" placeholder="กรอกหมายเลขโต๊ะ" min="1">
-        </div>
+        <!-- เลือกหมายเลขโต๊ะ -->
+        <label for="table-number">หมายเลขโต๊ะ:</label>
+        <input type="number" id="table-number" min="1" placeholder="กรอกหมายเลขโต๊ะ">
 
         <!-- เมนูเครื่องดื่ม -->
-        <div class="menu">
-            <div class="item">
-                <img src="coffee1.jpg" alt="กาแฟเย็น">
-                <h2>กาแฟเย็น</h2>
-                <p>ราคา: 55 บาท</p>
+        <h2>☕ เมนูเครื่องดื่ม</h2>
+        <div id="menu">
+            <div class="drink">
+                <img src="coffee.jpg" alt="Coffee">
+                <h3>กาแฟ</h3>
+                <p>ราคา: 50 บาท</p>
                 <label>ระดับความหวาน:</label>
                 <select class="sweetness">
-                    <option value="0%">0% (ไม่หวาน)</option>
-                    <option value="50%">50% (หวานน้อย)</option>
-                    <option value="100%">100% (หวานปกติ)</option>
+                    <option value="0%">0%</option>
+                    <option value="50%">50%</option>
+                    <option value="100%">100%</option>
                 </select>
-                <button onclick="addToCart('กาแฟเย็น', 55)">เพิ่มลงตะกร้า</button>
+                <button onclick="addToCart('กาแฟ', 50, this)">เพิ่มลงตะกร้า</button>
             </div>
-
-            <div class="item">
-                <img src="coffee2.jpg" alt="ชาเขียว">
-                <h2>ชาเขียว</h2>
+            <div class="drink">
+                <img src="matcha.jpg" alt="Matcha">
+                <h3>มัทฉะ</h3>
                 <p>ราคา: 60 บาท</p>
                 <label>ระดับความหวาน:</label>
                 <select class="sweetness">
-                    <option value="0%">0% (ไม่หวาน)</option>
-                    <option value="50%">50% (หวานน้อย)</option>
-                    <option value="100%">100% (หวานปกติ)</option>
+                    <option value="0%">0%</option>
+                    <option value="50%">50%</option>
+                    <option value="100%">100%</option>
                 </select>
-                <button onclick="addToCart('ชาเขียว', 60)">เพิ่มลงตะกร้า</button>
+                <button onclick="addToCart('มัทฉะ', 60, this)">เพิ่มลงตะกร้า</button>
             </div>
         </div>
 
         <!-- ตะกร้าสินค้า -->
-        <div class="cart">
-            <h2>🛒 ตะกร้าของคุณ</h2>
-            <ul id="cart-items"></ul>
-            <p id="total-price">ราคารวม: 0 บาท</p>
-            <button id="order-button" onclick="submitOrder()">สั่งซื้อ</button>
-        </div>
+        <h2>🛍 ตะกร้าสินค้า</h2>
+        <ul id="cart-list"></ul>
+        <p><strong>รวมทั้งหมด:</strong> <span id="total-price">0</span> บาท</p>
+        <button onclick="submitOrder()">✅ สั่งซื้อ</button>
     </div>
 
     <script src="script.js"></script>

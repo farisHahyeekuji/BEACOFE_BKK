@@ -1,35 +1,37 @@
 let cart = [];
 
-function addToCart(name, price) {
-    const sweetness = document.querySelector('.sweetness').value;
+// เพิ่มเครื่องดื่มลงตะกร้า
+function addToCart(name, price, button) {
+    const sweetness = button.previousElementSibling.value;
     cart.push({ name, price, sweetness });
     updateCart();
 }
 
+// อัปเดตตะกร้า
 function updateCart() {
-    const cartList = document.getElementById("cart-items");
+    const cartList = document.getElementById("cart-list");
+    const totalPrice = document.getElementById("total-price");
     cartList.innerHTML = "";
     let total = 0;
 
     cart.forEach((item, index) => {
-        const li = document.createElement("li");
-        li.textContent = `${item.name} (${item.sweetness}) - ${item.price} บาท`;
-        
+        const listItem = document.createElement("li");
+        listItem.textContent = `${item.name} (${item.sweetness}) - ${item.price} บาท`;
         const removeButton = document.createElement("button");
-        removeButton.textContent = "❌";
+        removeButton.textContent = "❌ ลบ";
         removeButton.onclick = () => {
             cart.splice(index, 1);
             updateCart();
         };
-
-        li.appendChild(removeButton);
-        cartList.appendChild(li);
+        listItem.appendChild(removeButton);
+        cartList.appendChild(listItem);
         total += item.price;
     });
 
-    document.getElementById("total-price").textContent = `ราคารวม: ${total} บาท`;
+    totalPrice.textContent = total;
 }
 
+// ส่งคำสั่งซื้อไปยัง Telegram
 function submitOrder() {
     const tableNumber = document.getElementById("table-number").value;
 
@@ -47,20 +49,16 @@ function submitOrder() {
         orderText += `- ${item.name} (${item.sweetness}) - ${item.price} บาท\n`;
     });
 
-    orderText += `\n💰 ราคารวม: ${document.getElementById("total-price").textContent}`;
+    orderText += `\n💰 ราคารวม: ${document.getElementById("total-price").textContent} บาท`;
 
-    // ✅ ส่งออเดอร์ไป Telegram
-    const telegramBotToken = "7694936636:AAHhJcIRXPH4HLRfuvfWpR4wwagylNQyKyg";
-    const chatId = "7694936636";
+    // 🔹 ใส่ Token และ Chat ID ของคุณ
+    const telegramBotToken = "7694936636:AAHhJcIRXPH4HLRfuvfWpR4wwagylNQyKyg";  // <-- เปลี่ยนเป็น Token ของคุณ
+    const chatId = "7694936636";  // <-- เปลี่ยนเป็น Chat ID ของคุณ
+
     fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: orderText
-        })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text: orderText })
     })
     .then(response => response.json())
     .then(data => {

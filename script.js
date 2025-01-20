@@ -33,18 +33,17 @@ function updateCart() {
 
 // ส่งคำสั่งซื้อไปยัง Telegram
 function submitOrder() {
-    const tableNumber = document.getElementById("table-number").value;
+    const customerName = document.getElementById("customer-name").value; // เปลี่ยนเป็นชื่อลูกค้า
 
     if (cart.length === 0) {
         alert("กรุณาเลือกสินค้าในตะกร้าก่อนสั่งซื้อ!");
         return;
     }
-    if (!tableNumber) {
-        alert("กรุณากรอกหมายเลขโต๊ะ!");
+    if (!customerName) {
+        alert("กรุณากรอกชื่อลูกค้า!");
         return;
     }
-
-    let orderText = `📢 คำสั่งซื้อใหม่!\n📍 โต๊ะ: ${tableNumber}\n`;
+    let orderText = `📢 คำสั่งซื้อใหม่!\n📍 ชื่อ: ${customerName}\n`;
     cart.forEach(item => {
         orderText += `- ${item.name} (${item.sweetness}) - ${item.price} บาท\n`;
     });

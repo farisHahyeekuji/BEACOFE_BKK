@@ -53,7 +53,7 @@ function submitOrder() {
 
     // 🔹 ใส่ Token และ Chat ID ของคุณ
     const telegramBotToken = "7694936636:AAHhJcIRXPH4HLRfuvfWpR4wwagylNQyKyg";  // <-- เปลี่ยนเป็น Token ของคุณ
-    const chatId = "7694936636";  // <-- เปลี่ยนเป็น Chat ID ของคุณ
+    const chatId = "5963263519";  // <-- เปลี่ยนเป็น Chat ID ของคุณ
 
     fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
         method: "POST",

@@ -51,8 +51,8 @@ function submitOrder() {
     orderText += `\n💰 ราคารวม: ${document.getElementById("total-price").textContent} บาท`;
 
     // 🔹 ใส่ Token และ Chat ID ของคุณ
-    const telegramBotToken = "7287220804:AAH2y3PqAkEnl8E5ZuoonE0QqV2BgpUnfss";  // <-- เปลี่ยนเป็น Token ของคุณ
-    const chatId = "8116386478";  // <-- เปลี่ยนเป็น Chat ID ของคุณ
+    const telegramBotToken = "7694936636:AAHhJcIRXPH4HLRfuvfWpR4wwagylNQyKyg";  // <-- เปลี่ยนเป็น Token ของคุณ
+    const chatId = "5963263519";  // <-- เปลี่ยนเป็น Chat ID ของคุณ
 
     fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
         method: "POST",

@@ -10,10 +10,9 @@
     <div class="container">
         <h1>Pasanmit Cafe</h1>
 
-       <!-- เลือกชื่อลูกค้า -->
-<label for="customer-name">ชื่อลูกค้า:</label>
-<input type="text" id="customer-name" placeholder="กรอกชื่อลูกค้า">
-
+        <!-- เลือกชื่อลูกค้า -->
+        <label for="customer-name">ชื่อลูกค้า:</label>
+        <input type="text" id="customer-name" placeholder="กรอกชื่อลูกค้า">
 
         <!-- เมนูเครื่องดื่ม -->
         <h2>☕ เมนูเครื่องดื่ม</h2>
@@ -28,7 +27,9 @@
                     <option value="50%">50%</option>
                     <option value="100%">100%</option>
                 </select>
-                <button onclick="addToCart('อเมริกาโน่', 50, this)">เพิ่มลงตะกร้า</button>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
+                <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
             </div>
             <div class="drink">
                 <img src="https://assets.onecompiler.app/433gecjsy/436mb4fzg/iced-matcha-latte.jpg" alt="Matcha">
@@ -40,6 +41,8 @@
                     <option value="50%">50%</option>
                     <option value="100%">100%</option>
                 </select>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
                 <button onclick="addToCart('มัทฉะ', 60, this)">เพิ่มลงตะกร้า</button>
             </div>
             <div class="drink">
@@ -52,7 +55,9 @@
                     <option value="50%">50%</option>
                     <option value="100%">100%</option>
                 </select>
-                <button onclick="addToCart('โกโก้', 50, this)">เพิ่มลงตะกร้า</button>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
+                <button onclick="addToCart('โกโก้', 55, this)">เพิ่มลงตะกร้า</button>
             </div>
             <div class="drink">
                 <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/glass-orange-juice-placed-wood.jpg" alt="Orange">
@@ -64,6 +69,8 @@
                     <option value="50%">50%</option>
                     <option value="100%">100%</option>
                 </select>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
                 <button onclick="addToCart('น้ำส้มสด', 50, this)">เพิ่มลงตะกร้า</button>
             </div>
             <div class="drink">
@@ -76,13 +83,17 @@
                     <option value="50%">50%</option>
                     <option value="100%">100%</option>
                 </select>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
                 <button onclick="addToCart('ชาไทย', 50, this)">เพิ่มลงตะกร้า</button>
-            </div> 
+            </div>
             <div class="drink">
                 <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/high-angle-delicious-daiquiri-with-strawberry.jpg" alt="Strawberry Soda">
                 <h3>สตอเบอร์รี่โซดา</h3>
                 <p>ราคา: 45 บาท</p>
-                <button onclick="addToCart('สตอเบอร์รี่โซดา', 50, this)">เพิ่มลงตะกร้า</button>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
+                <button onclick="addToCart('สตอเบอร์รี่โซดา', 45, this)">เพิ่มลงตะกร้า</button>
             </div>
         </div>
 

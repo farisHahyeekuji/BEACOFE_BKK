@@ -64,10 +64,12 @@ button:disabled {
 
 #menu {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: row;
+    overflow-x: auto; /* เลื่อนในแนวนอน */
     margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .drink {
@@ -77,6 +79,7 @@ button:disabled {
     width: 250px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    flex-shrink: 0; /* ไม่ให้รูปภาพย่อ */
 }
 
 .drink img {

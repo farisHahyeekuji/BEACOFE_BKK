@@ -90,7 +90,7 @@ function submitOrder() {
         .then(response => response.json())
         .then(data => {
             if (data.ok) {
-                alert("สั่งซื้อสำเร็จ! ระบบส่งข้อมูลไปยัง Telegram แล้ว");
+                alert("สั่งซื้อสำเร็จ! คุณลูกค้ารอสักครู่นะค๊าบ");
                 cart = [];  // ล้างตะกร้าหลังการสั่งซื้อ
                 updateCart();  // อัปเดตตะกร้า
             } else {

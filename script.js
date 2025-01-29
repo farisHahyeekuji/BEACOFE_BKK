@@ -36,8 +36,21 @@ function updateCart() {
 
     totalPrice.textContent = total;  // อัปเดตราคาทั้งหมด
 }
+function togglePaymentFields() {
+    const paymentMethod = document.getElementById('payment-method').value;
+    const cashPayment = document.getElementById('cash-payment');
+    const transferPayment = document.getElementById('transfer-payment');
 
-// ส่งคำสั่งซื้อไปยัง Telegram
+    if (paymentMethod === 'cash') {
+        cashPayment.style.display = 'block';
+        transferPayment.style.display = 'none';
+    } else if (paymentMethod === 'transfer') {
+        cashPayment.style.display = 'none';
+        transferPayment.style.display = 'block';
+    }
+}
+
+
 function submitOrder() {
     const customerName = document.getElementById("customer-name").value;  // รับชื่อลูกค้า
 
@@ -61,18 +74,57 @@ function submitOrder() {
     const telegramBotToken = "7287220804:AAH2y3PqAkEnl8E5ZuoonE0QqV2BgpUnfss";  // ใส่ Token ของคุณ
     const chatId = "8116386478";  // ใส่ Chat ID ของคุณ
 
-    fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chatId, text: orderText })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.ok) {
-            alert("สั่งซื้อสำเร็จ! กรุณารอพนักงานทำเครื่องดื่ม ☕");
-            cart = [];  // ล้างตะกร้าหลังการสั่งซื้อ
-            updateCart();  // อัปเดตตะกร้า
-        }
-    })
-    .catch(error => console.error("Error:", error));
+    const fileInput = document.getElementById("slip-upload");
+    const file = fileInput.files[0];
+
+    if (file) {
+        let formData = new FormData();
+        formData.append('chat_id', chatId);
+        formData.append('caption', orderText);  // ข้อความคำสั่งซื้อ
+        formData.append('photo', file);  // แนบรูปสลิปโอนเงิน
+
+        fetch(`https://api.telegram.org/bot${telegramBotToken}/sendPhoto`, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                alert("สั่งซื้อสำเร็จ! ระบบส่งข้อมูลไปยัง Telegram แล้ว");
+                cart = [];  // ล้างตะกร้าหลังการสั่งซื้อ
+                updateCart();  // อัปเดตตะกร้า
+            } else {
+                alert('เกิดข้อผิดพลาดในการส่งสลิป');
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    } else {
+        // หากไม่มีการแนบสลิป
+        fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: chatId, text: orderText })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                alert("สั่งซื้อสำเร็จ! คุณลูกค้ารอสักครู่นะค๊าบ");
+                cart = [];  // ล้างตะกร้าหลังการสั่งซื้อ
+                updateCart();  // อัปเดตตะกร้า
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    }
 }
+
+function toggleSlipUpload() {
+    let paymentMethod = document.getElementById('payment-method').value;
+    let slipContainer = document.getElementById('slip-upload-container');
+    
+    if (paymentMethod === 'transfer') {
+        slipContainer.style.display = 'block';
+    } else {
+        slipContainer.style.display = 'none';
+    }
+}
+

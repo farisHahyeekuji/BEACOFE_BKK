@@ -71,8 +71,8 @@ function submitOrder() {
     orderText += `\n💰 ราคารวม: ${document.getElementById("total-price").textContent} บาท`;
 
     // 🔹 ใส่ Token และ Chat ID ของคุณ
-    const telegramBotToken = "7287220804:AAH2y3PqAkEnl8E5ZuoonE0QqV2BgpUnfss";  // ใส่ Token ของคุณ
-    const chatId = "8116386478";  // ใส่ Chat ID ของคุณ
+    const telegramBotToken = "7694936636:AAHhJcIRXPH4HLRfuvfWpR4wwagylNQyKyg";  // ใส่ Token ของคุณ
+    const chatId = "5963263519";  // ใส่ Chat ID ของคุณ
 
     const fileInput = document.getElementById("slip-upload");
     const file = fileInput.files[0];

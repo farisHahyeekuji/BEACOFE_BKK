@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apriori Recommendation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Apriori Recommendation System</h1>
+    
+    <button id="getRecommendationsBtn">Get Recommendations</button>
+    
+    <h2>Recommendations</h2>
+    <ul id="recommendationsList"></ul>
+
+    <script>
+        // ข้อมูลการซื้อสินค้า (สามารถเปลี่ยนแปลงได้)
+        const transactionData = [
+            { 'Juice': 1, 'Milk': 1, 'Coffee': 0, 'Tea': 0 },
+            { 'Juice': 1, 'Milk': 0, 'Coffee': 1, 'Tea': 1 },
+            { 'Juice': 0, 'Milk': 1, 'Coffee': 1, 'Tea': 0 },
+            { 'Juice': 1, 'Milk': 1, 'Coffee': 0, 'Tea': 1 },
+            { 'Juice': 0, 'Milk': 1, 'Coffee': 1, 'Tea': 0 }
+        ];
+
+        // เมื่อคลิกที่ปุ่ม 'Get Recommendations'
+        $('#getRecommendationsBtn').click(function() {
+            $.ajax({
+                url: '/get_recommendations',  // เรียก API ที่เราเซ็ตใน Flask
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    data: transactionData
+                }),
+                success: function(response) {
+                    const recommendations = response.recommendations;
+                    $('#recommendationsList').empty();
+                    recommendations.forEach(function(rule) {
+                        const item = `<li>From: ${rule['antecedents']} => To: ${rule['consequents']} with confidence: ${rule['confidence']}</li>`;
+                        $('#recommendationsList').append(item);
+                    });
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

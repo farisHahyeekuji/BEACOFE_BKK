@@ -1,17 +1,46 @@
-let cart = [];  // ตัวแปรเก็บข้อมูลในตะกร้า
+let cart = []; // อาร์เรย์เก็บสินค้าที่เพิ่มลงตะกร้า
 
-// เพิ่มเครื่องดื่มลงตะกร้า
+// ฟังก์ชันเพิ่มสินค้าไปยังตะกร้า
+function addToCart(itemName) {
+    cart.push(itemName); // เพิ่มชื่อสินค้าไปยังอาร์เรย์
+    updateCartCount(); // อัปเดตจำนวนสินค้าบนไอคอนตะกร้า
+}
+
+
+
+// ฟังก์ชันค้นหาเมนู
+function searchMenu() {
+    const searchText = document.getElementById("search").value.toLowerCase();
+    const drinks = document.querySelectorAll(".drink");
+
+    drinks.forEach(drink => {
+        const name = drink.querySelector("h3").textContent.toLowerCase();
+        drink.style.display = name.includes(searchText) ? "block" : "none";
+    });
+}
+
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").textContent = cart.length;
+}
+updateCartCount(); // อัปเดตเมื่อโหลดหน้า
+
+
 function addToCart(name, price, button) {
-    const sweetnessDropdown = button.parentElement.querySelector('select'); // ค้นหาค่า sweetness จาก select
-    const sweetness = sweetnessDropdown.value;  // รับค่าจาก dropdown (0%, 50%, 100%)
-    const quantityInput = button.parentElement.querySelector('input'); // ค้นหาจำนวนแก้ว
-    const quantity = parseInt(quantityInput.value) || 1;  // รับค่าจำนวนแก้ว (ถ้าไม่กรอกจะใช้ค่า 1 แก้ว)
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // เพิ่มข้อมูลเครื่องดื่มลงในตะกร้า โดยมีจำนวนแก้ว
+    // ดึงค่าความหวานและจำนวน
+    const sweetnessDropdown = button.parentElement.querySelector('.sweetness');
+    const sweetness = sweetnessDropdown ? sweetnessDropdown.value : "ไม่ระบุ";
+    const quantityInput = button.parentElement.querySelector('.quantity');
+    const quantity = parseInt(quantityInput.value) || 1;
+
     cart.push({ name, price, sweetness, quantity });
 
-    updateCart();  // อัปเดตการแสดงผลในตะกร้า
+    localStorage.setItem("cart", JSON.stringify(cart)); // บันทึกลง Local Storage
+    updateCartCount(); // อัปเดตจำนวนสินค้า
 }
+
 
 // อัปเดตตะกร้า
 function updateCart() {
@@ -35,7 +64,12 @@ function updateCart() {
     });
 
     totalPrice.textContent = total;  // อัปเดตราคาทั้งหมด
+    document.getElementById("cart-count").textContent = cart.length;
+
 }
+
+
+
 function togglePaymentFields() {
     const paymentMethod = document.getElementById('payment-method').value;
     const cashPayment = document.getElementById('cash-payment');
@@ -129,3 +163,20 @@ function toggleSlipUpload() {
 }
 
 
+function searchMenu() {
+    const searchText = document.getElementById("search").value.toLowerCase();
+    const drinks = document.querySelectorAll(".drink");
+
+    drinks.forEach(drink => {
+        const name = drink.querySelector("h3").textContent.toLowerCase();
+        if (name.includes(searchText)) {
+            drink.style.display = "block";
+        } else {
+            drink.style.display = "none";
+        }
+    });
+}
+
+function showCartPage() {
+    window.location.href = "cart.html"; // ไปที่หน้าตะกร้าสินค้า
+}

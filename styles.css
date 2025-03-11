@@ -185,3 +185,75 @@ footer {
 button {
     margin-top: 10px; /* ขยับปุ่มลง */
 }
+/* ใช้สำหรับขนาดหน้าจอที่กว้างสุด 768px (โดยปกติจะเป็นโทรศัพท์มือถือ) */
+@media screen and (max-width: 768px) {
+    /* ปรับความกว้างของ container */
+    .container {
+        width: 90%; /* ขยายความกว้างของ container */
+        padding: 10px;
+        margin-top: 15px;
+    }
+
+    /* ปรับขนาดของตัวหนังสือใน header */
+    header {
+        padding: 25px 40px;
+    }
+
+    .logo {
+        font-weight: bold;
+        font-size: 1em;
+    }
+    
+    /* ให้ช่องค้นหามีขนาดเล็กลง */
+    .search-box input {
+        width: 100px;
+    }
+
+    .search-box button {
+        padding: 5px;
+    }
+
+    /* ปรับขนาดของเมนูและรายการสินค้า */
+    #menu {
+        flex-direction: column; /* แสดงรายการในแนวตั้ง */
+        align-items: center;
+    }
+
+    .drink {
+        width: 200px; /* ลดขนาดของแต่ละ drink */
+    }
+
+    .basket {
+        font-size: 20px; /* ลดขนาดของตะกร้าสินค้า */
+    }
+
+    /* ปรับขนาดตัวหนังสือให้เหมาะสม */
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    label, input, select {
+        font-size: 14px;
+        width: 80%; /* ให้กว้างกว่าเดิม */
+    }
+
+    button {
+        font-size: 16px; /* ปรับขนาดปุ่ม */
+    }
+
+    /* ปรับขนาดปุ่มกลับไปหน้าหลัก */
+    #back-button {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    /* ทำให้รายการในตะกร้าสินค้าเต็มหน้าจอ */
+    ul#cart-list li {
+        width: 100%; /* ให้กว้างเต็ม */
+        padding: 10px;
+    }
+}

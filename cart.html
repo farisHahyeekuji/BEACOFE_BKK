@@ -14,9 +14,10 @@
 
         h2 {
             text-align: center;
-            padding: 20px;
-            background-color: #333;
+            padding: 30px;
+            background-color: #4CAF50;
             color: white;
+            font-size: 2em;
         }
 
         p {
@@ -39,7 +40,7 @@
     justify-content: space-between;
     align-items: center;
     width: auto; /* ทำให้ขนาดพื้นหลังสั้นลงตามเนื้อหา */
-    max-width:  ; /* หรือกำหนดความกว้างสูงสุดเพื่อไม่ให้เกินขนาดของบรรจุ */
+    max-width: 30% ; /* หรือกำหนดความกว้างสูงสุดเพื่อไม่ให้เกินขนาดของบรรจุ */
     margin-left: auto;
     margin-right: auto;
 }
@@ -55,7 +56,10 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #da3d3d;
+        }
+        button#back-button:hover {
+            background-color: #4CAF50;
         }
 
         #qr-code {
@@ -74,14 +78,16 @@
 
         button#back-button {
             position: absolute;
-            top: 30px;
+            top: 40px;
             left: 20px;
+            padding: none;
+            
         }
     </style>
 </head>
 <body>
 
-    <h2>🛒 ตะกร้าสินค้า</h2>
+    <h2>ตะกร้าสินค้า</h2>
     <p><strong>จำนวนสินค้าในตะกร้า: </strong><span id="cart-count">0</span> รายการ</p> <!-- เพิ่มจำนวนสินค้าในตะกร้า -->
     <ul id="cart-list"></ul>
     <p><strong>รวมทั้งหมด:</strong> <span id="total-price">0</span> บาท</p>
@@ -110,7 +116,7 @@
     </div>
 
     <button id="back-button" onclick="window.location.href='index.html'">
-        <img src="https://img.icons8.com/?size=100&id=26191&format=png&color=000000" alt="Back" style="width: 30px; height: 30px;">
+        <img src="https://img.icons8.com/?size=100&id=7811&format=png&color=FFFFFF" alt="Back" style="width: 50px; height: 50px;">
     </button>
     
 
@@ -130,7 +136,7 @@
                 listItem.textContent = `${item.name} (${item.sweetness}) x${item.quantity} - ${item.price * item.quantity} บาท`;
                 
                 const removeButton = document.createElement("button");
-                removeButton.textContent = "❌ ลบ";
+                removeButton.textContent = " ลบ ";
                 removeButton.onclick = () => {
                     cart.splice(index, 1);
                     localStorage.setItem("cart", JSON.stringify(cart));

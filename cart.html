@@ -1,0 +1,49 @@
+<!-- หน้า ตะกร้า (cart.html) -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตะกร้าสินค้า - Pasanmit Café</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-title">Pasanmit Café ☕</div>
+        
+        <!-- ตะกร้าสินค้า -->
+        <div id="cart-container">
+            <span id="cart-icon">🛒</span>
+            <span>ตะกร้า (<span id="cart-count">0</span>)</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>ตะกร้าสินค้า</h1>
+        <div id="cart-items">
+            <!-- รายการสินค้าจะถูกแสดงที่นี่ -->
+        </div>
+        <div id="cart-total">
+            <p>ราคารวม: <span id="total-price">0 บาท</span></p>
+        </div>
+        
+        <!-- ฟอร์มการชำระเงิน -->
+        <h3>เลือกวิธีการชำระเงิน</h3>
+        <select id="payment-method" onchange="togglePaymentFields()">
+            <option value="cash">เงินสด</option>
+            <option value="transfer">โอนเงิน</option>
+        </select>
+
+        <div id="cash-payment" style="display: block;">
+            <button onclick="confirmOrder()">ยืนยันการสั่งซื้อ (เงินสด)</button>
+        </div>
+        <div id="transfer-payment" style="display: none;">
+            <label for="slip-upload">อัพโหลดสลิปการโอน</label>
+            <input type="file" id="slip-upload">
+            <button onclick="confirmOrder()">ยืนยันการสั่งซื้อ (โอนเงิน)</button>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

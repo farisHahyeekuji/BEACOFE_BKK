@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasanmit Cafe - Order System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <div class="logo">Pasanmit Cafe</div>
+
+        <nav class="menu-category">
+            <a href="#menu">Menu</a>
+            <a href="#coffee">☕ Coffee</a>
+            <a href="#milk">🥛 นม</a>
+            <a href="#soda">🍹 โซดา</a>
+            <a href="#fruit">🍊 ผลไม้</a>
+        </nav>
+
         <div class="search-box">
             <input type="text" id="search" placeholder="ค้นหาเมนู...">
-            <button onclick="searchMenu()">
-                <img src="https://img.icons8.com/?size=100&id=7695&format=png&color=000000" style="width: 24px; height: 24px;">
+            <button onclick="searchMenu()">ค้นหา
             </button>
-            
         </div>
+
         <div class="basket" onclick="showCartPage()">
-            <img src="https://img.icons8.com/?size=100&id=Ogxmypcz5fOR&format=png&color=FFFFFF" alt="Cart" style="width: 30px; height: 30px;">
+            <img src="https://img.icons8.com/?size=100&id=Ogxmypcz5fOR&format=png&color=FFFFFF" 
+                 alt="Cart" style="width: 30px; height: 30px;">
             <span id="cart-count">0</span>
         </div>
-        
-        
     </header>
-    
-    <div class="container">
-        <h1>Pasanmit Cafe</h1>
 
-        <!-- เลือกชื่อลูกค้า -->
-        <h1>ชื่อลูกค้า</h1>
+    <main class="container">
+        <!-- ชื่อลูกค้า -->
+        <h2>ชื่อลูกค้า</h2>
         <input type="text" id="customer-name" placeholder="กรอกชื่อลูกค้า">
 
         <!-- เมนูเครื่องดื่ม -->
-        <h2>☕ เมนูเครื่องดื่ม</h2>
-        <div id="menu">
-            <!-- เครื่องดื่มต่างๆ (เหมือนเดิม) -->
-            <!-- ตัวอย่างเครื่องดื่ม -->
+
+        <h2 id="menu">☕ เมนูเครื่องดื่มทั้งหมด</h2>
+
+        <section id="menu">
             <div class="drink">
                 <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
                 <h3>อเมริกาโน่</h3>
@@ -51,21 +58,6 @@
                 <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
             </div>
 
-
-            <div class="drink">
-                <img src="https://assets.onecompiler.app/433gecjsy/436mb4fzg/iced-matcha-latte.jpg" alt="Matcha">
-                <h3>มัทฉะ</h3>
-                <p>ราคา: 60 บาท</p>
-                <label>ระดับความหวาน:</label>
-                <select class="sweetness">
-                    <option value="0%">0%</option>
-                    <option value="50%">50%</option>
-                    <option value="100%">100%</option>
-                </select>
-                <label>จำนวน:</label>
-                <input type="number" class="quantity" value="1" min="1">
-                <button onclick="addToCart('มัทฉะ', 60, this)">เพิ่มลงตะกร้า</button>
-            </div>
             <div class="drink">
                 <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/lced-cocoa-with-sweet-milk-cold-chocolate-drink.jpg" alt="Cocoa">
                 <h3>โกโก้</h3>
@@ -80,6 +72,7 @@
                 <input type="number" class="quantity" value="1" min="1">
                 <button onclick="addToCart('โกโก้', 55, this)">เพิ่มลงตะกร้า</button>
             </div>
+
             <div class="drink">
                 <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/glass-orange-juice-placed-wood.jpg" alt="Orange">
                 <h3>น้ำส้มสด</h3>
@@ -94,6 +87,7 @@
                 <input type="number" class="quantity" value="1" min="1">
                 <button onclick="addToCart('น้ำส้มสด', 50, this)">เพิ่มลงตะกร้า</button>
             </div>
+
             <div class="drink">
                 <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/iced-latte-glass-pink-stand-wooden-table-summer-cafe-green-bushes_343596-1522.jpg" alt="Thai Tea">
                 <h3>ชาไทย</h3>
@@ -108,17 +102,220 @@
                 <input type="number" class="quantity" value="1" min="1">
                 <button onclick="addToCart('ชาไทย', 50, this)">เพิ่มลงตะกร้า</button>
             </div>
+
             <div class="drink">
                 <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/high-angle-delicious-daiquiri-with-strawberry.jpg" alt="Strawberry Soda">
-                <h3>สตอเบอร์รี่โซดา</h3>
+                <h3>สตรอเบอร์รี่โซดา</h3>
                 <p>ราคา: 45 บาท</p>
                 <label>จำนวน:</label>
                 <input type="number" class="quantity" value="1" min="1">
-                <button onclick="addToCart('สตอเบอร์รี่โซดา', 45, this)">เพิ่มลงตะกร้า</button>
+                <button onclick="addToCart('สตรอเบอร์รี่โซดา', 45, this)">เพิ่มลงตะกร้า</button>
             </div>
-            <!-- เครื่องดื่มอื่นๆ ... -->
-        </div>
+
+            <div class="drink">
+                <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
+                <h3>อเมริกาโน่</h3>
+                <p>ราคา: 60 บาท</p>
+                <label>ระดับความหวาน:</label>
+                <select class="sweetness">
+                    <option value="0%">0%</option>
+                    <option value="50%">50%</option>
+                    <option value="100%">100%</option>
+                </select>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
+                <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
+            </div>
+
+            <div class="drink">
+                <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
+                <h3>อเมริกาโน่</h3>
+                <p>ราคา: 60 บาท</p>
+                <label>ระดับความหวาน:</label>
+                <select class="sweetness">
+                    <option value="0%">0%</option>
+                    <option value="50%">50%</option>
+                    <option value="100%">100%</option>
+                </select>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
+                <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
+            </div>
+
+            <div class="drink">
+                <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
+                <h3>อเมริกาโน่</h3>
+                <p>ราคา: 60 บาท</p>
+                <label>ระดับความหวาน:</label>
+                <select class="sweetness">
+                    <option value="0%">0%</option>
+                    <option value="50%">50%</option>
+                    <option value="100%">100%</option>
+                </select>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
+                <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
+            </div>
+
+            <div class="drink">
+                <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
+                <h3>อเมริกาโน่</h3>
+                <p>ราคา: 60 บาท</p>
+                <label>ระดับความหวาน:</label>
+                <select class="sweetness">
+                    <option value="0%">0%</option>
+                    <option value="50%">50%</option>
+                    <option value="100%">100%</option>
+                </select>
+                <label>จำนวน:</label>
+                <input type="number" class="quantity" value="1" min="1">
+                <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
+            </div>
+
+            
+        </section>
+
+        <section>
+            <h2 id="coffee">☕ เมนู Coffee</h2>
+            <section id="menu">
+                <div class="drink">
+                    <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
+                    <h3>อเมริกาโน่</h3>
+                    <p>ราคา: 60 บาท</p>
+                    <label>ระดับความหวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
+                </div>
+    
+                <div class="drink">
+                    <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/lced-cocoa-with-sweet-milk-cold-chocolate-drink.jpg" alt="Cocoa">
+                    <h3>โกโก้</h3>
+                    <p>ราคา: 55 บาท</p>
+                    <label>ระดับความหวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button onclick="addToCart('โกโก้', 55, this)">เพิ่มลงตะกร้า</button>
+                </div>
+    
+                <div class="drink">
+                    <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/glass-orange-juice-placed-wood.jpg" alt="Orange">
+                    <h3>น้ำส้มสด</h3>
+                    <p>ราคา: 50 บาท</p>
+                    <label>ระดับความหวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button onclick="addToCart('น้ำส้มสด', 50, this)">เพิ่มลงตะกร้า</button>
+                </div>
+    
+                <div class="drink">
+                    <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/iced-latte-glass-pink-stand-wooden-table-summer-cafe-green-bushes_343596-1522.jpg" alt="Thai Tea">
+                    <h3>ชาไทย</h3>
+                    <p>ราคา: 50 บาท</p>
+                    <label>ระดับความหวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button onclick="addToCart('ชาไทย', 50, this)">เพิ่มลงตะกร้า</button>
+                </div>
+    
+                <div class="drink">
+                    <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/high-angle-delicious-daiquiri-with-strawberry.jpg" alt="Strawberry Soda">
+                    <h3>สตรอเบอร์รี่โซดา</h3>
+                    <p>ราคา: 45 บาท</p>
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button onclick="addToCart('สตรอเบอร์รี่โซดา', 45, this)">เพิ่มลงตะกร้า</button>
+                </div>
+    
+                <div class="drink">
+                    <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
+                    <h3>อเมริกาโน่</h3>
+                    <p>ราคา: 60 บาท</p>
+                    <label>ระดับความหวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
+                </div>
+    
+                <div class="drink">
+                    <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
+                    <h3>อเมริกาโน่</h3>
+                    <p>ราคา: 60 บาท</p>
+                    <label>ระดับความหวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
+                </div>
+    
+                <div class="drink">
+                    <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
+                    <h3>อเมริกาโน่</h3>
+                    <p>ราคา: 60 บาท</p>
+                    <label>ระดับความหวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
+                </div>
+    
+                <div class="drink">
+                    <img src="https://assets.onecompiler.app/4362hwp5b/436ma9rm4/pouring-coffee-mug-close-up.jpg" alt="Americano">
+                    <h3>อเมริกาโน่</h3>
+                    <p>ราคา: 60 บาท</p>
+                    <label>ระดับความหวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button onclick="addToCart('อเมริกาโน่', 60, this)">เพิ่มลงตะกร้า</button>
+                </div>
+    
+                
+            </section>
+            <h2 id="milk">🥛 เมนู นม</h2>
+            <h2 id="soda">🍹 เมนู โซดา</h2>
+            <h2 id="fruit">🍊 เมนู ผลไม้</h2>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>

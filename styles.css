@@ -4,17 +4,33 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    padding-top: 70px; /* เพิ่มระยะห่างให้เนื้อหาหลักไม่ทับ header */
 }
 
 header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: #6b4226;
-    padding: 15px;
+    padding: 20px;
     color: white;
-    font-size: 18px;
+    font-size: 30px ;
+    position: fixed; /* ทำให้ header ปักมุด */
+    top: 0; /* ติดอยู่ที่ด้านบน */
+    left: 0; /* ติดอยู่ที่ด้านซ้าย */
+    width: 98.1%; /* ให้ header กว้างเต็มหน้าจอ */
+    z-index: 1000; /* ทำให้ header อยู่เหนือเนื้อหาทั้งหมด */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับ header */
+    font-weight: bold; /* เพิ่มให้ข้อความใน header เป็นตัวหนา */
 }
+
+html {
+    scroll-behavior: smooth;  /* เลื่อนนุ่มนวล */
+    scroll-padding-top: 140px;  /* เพิ่มพื้นที่เพื่อไม่ให้ทับ header */
+}
+
+
 
 h2 {
     color: #333;
@@ -48,6 +64,8 @@ input, select {
     display: flex;
     align-items: center;
     margin-right: 20px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .search-box input {
@@ -65,12 +83,14 @@ input, select {
     border-radius: 6px;
     height: 38px;
     margin-left: 5px;
+    margin-top: -16px;
 }
 
 .basket {
     cursor: pointer;
     font-size: 22px;
     position: relative;
+    margin-left: 10px;
 }
 
 .basket span {
@@ -92,6 +112,7 @@ input, select {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding-top: 10px; /* เพิ่ม padding ให้กับเนื้อหาภายใน */
 }
 
 #menu {
@@ -123,9 +144,6 @@ input, select {
     margin-bottom: 20px;
 }
 
-
-
-
 .drink img {
     width: 180px;
     height: 120px;
@@ -139,7 +157,7 @@ input, select {
 }
 
 button {
-    width: 50%;
+    width: 60%;
     padding: 10px;
     background-color: #7a4d23;
     color: white;
@@ -156,14 +174,16 @@ button:disabled {
     background-color: #ccc;
 }
 
+/* ปรับให้เมนูอยู่ในแถวเดียวกันในขนาดปกติ */
 .menu-category {
     display: flex;
     gap: 15px;
-    margin-left: auto;
-    justify-content: flex-end;
+    justify-content: center;
     padding-right: 0;
+    width: 100%;
 }
 
+/* ซ่อนเมนูในมือถือ */
 .menu-category a {
     text-decoration: none;
     color: white;
@@ -173,8 +193,70 @@ button:disabled {
     transition: background 0.3s ease;
 }
 
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* เมื่อหน้าจอเล็กลง (Mobile view) */
+@media (max-width: 768px) {
+    .menu-category {
+        display: none;  /* ซ่อนเมนูปกติ */
+        flex-direction: column;
+        align-items: center;
+        background-color: #6b4226;
+        width: 100%;
+    }
+
+    .menu-category.show {
+        display: flex;  /* แสดงเมนูเมื่อคลิกที่ hamburger */
+    }
+
+    .hamburger-menu {
+        display: block;  /* แสดงปุ่ม hamburger */
+    }
+
+    .menu-category a {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth; /* เพิ่มความราบรื่นในการเลื่อนหน้า */
+}
+
+
 .menu-category a:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+/* เมื่อหน้าจอเล็กลง (Mobile view) */
+@media (max-width: 768px) {
+    .menu-category {
+        display: none;  /* ซ่อนเมนูปกติ */
+        flex-direction: column;
+        align-items: center;
+        background-color: #6b4226;
+        width: 100%;
+    }
+
+    .menu-category.show {
+        display: flex;  /* แสดงเมนูเมื่อคลิกที่ hamburger */
+    }
+
+    .hamburger-menu {
+        display: block;  /* แสดงปุ่ม hamburger */
+    }
+
+    .menu-category a {
+        font-size: 18px;
+        padding: 10px;
+    }
 }
 
 .option-group {
@@ -191,6 +273,12 @@ button:disabled {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    .search-box {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
     .search-box input {
         width: 120px;
     }
@@ -203,19 +291,66 @@ button:disabled {
         width: 95%;
     }
 
-    .drink {
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px;
+    .drink-container {
+        grid-template-columns: repeat(2, 1fr);  /* 2 คอลัมน์บนมือถือ */
     }
 
     .menu-category {
         flex-direction: column;
         align-items: center;
+        margin-top: 10px;
     }
 
     .menu-category a {
         font-size: 18px;
         padding: 6px;
     }
-} 
+
+    .drink {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .basket {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+
+/* ทำให้ #menu หรือ .drink-container เลื่อนในแนวนอน */
+#menu, .drink-container {
+    display: flex; /* ใช้ flexbox เพื่อให้ไอเท็มเรียงตามแนวนอน */
+    overflow-x: auto; /* ทำให้เมนูสามารถเลื่อนในแนวนอนได้ */
+    gap: 16px; /* ระยะห่างระหว่างไอเท็ม */
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+#menu::-webkit-scrollbar, .drink-container::-webkit-scrollbar {
+    height: 8px; /* ปรับความสูงของ scrollbar */
+}
+
+#menu::-webkit-scrollbar-thumb, .drink-container::-webkit-scrollbar-thumb {
+    background: #6b4226; /* สีของ scrollbar */
+    border-radius: 5px;
+}
+
+#menu::-webkit-scrollbar-track, .drink-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+/* บนอุปกรณ์มือถือ เพิ่มพื้นที่ให้ไอเท็มมีขนาดเหมาะสม */
+@media (max-width: 768px) {
+    .drink-container {
+        flex-wrap: nowrap; /* ป้องกันไม่ให้ไอเท็มไปอยู่ในแถวใหม่ */
+        gap: 8px; /* ลดระยะห่างระหว่างไอเท็ม */
+    }
+
+    .drink {
+        flex: 0 0 auto; /* ทำให้แต่ละ drink element คงขนาดที่กำหนด */
+        width: 150px; /* กำหนดขนาดที่เหมาะสม */
+        height: auto;
+    }
+}

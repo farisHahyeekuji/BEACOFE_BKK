@@ -180,3 +180,25 @@ function searchMenu() {
 function showCartPage() {
     window.location.href = "cart.html"; // ไปที่หน้าตะกร้าสินค้า
 }
+
+
+
+
+// ตรวจจับการคลิกที่ลิงก์เพื่อเลื่อนไปยังส่วนที่เกี่ยวข้อง
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // ป้องกันการทำงานตามปกติของลิงก์
+
+        // เลื่อนไปยังส่วนที่มี id ตรงกัน
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth', // เลื่อนอย่างลื่นไหล
+            block: 'start'      // ให้ไปที่จุดเริ่มต้นของ section
+        });
+    });
+});
+
+// ฟังก์ชันที่ใช้สลับเมนูให้แสดง/ซ่อนเมื่อคลิกปุ่ม hamburger
+function toggleMenu() {
+    const menu = document.querySelector('.menu-category');
+    menu.classList.toggle('show');
+}

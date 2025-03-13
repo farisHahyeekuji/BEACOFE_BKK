@@ -8,46 +8,50 @@
 </head>
 <body>
     
+        <header>
+            <h1 class="page-title">ตะกร้าสินค้า</h1>
+        </header>
+        <div class="container">
+        <div class="user-info">
+            <h2>ชื่อผู้สั่งซื่อ</h2>
+            <input type="text" id="customer-name" placeholder="กรอกชื่อของคุณ" />
+        </div>
 
-    <h2>ตะกร้าสินค้า</h2>
+        <div class="cart-summary">
+            <p><strong>จำนวนสินค้าในตะกร้าสินค้า:</strong> <span id="cart-count">0</span> รายการ</p>
+            <ul id="cart-list"></ul>
+            <p><strong>รวมทั้งหมด:</strong> <span id="total-price">0</span> บาท</p>
+        </div>
 
-     <!-- 🆕 เพิ่มช่องกรอกชื่อผู้ใช้ -->
-    <div id="user-info" style="text-align: center; padding: 20px;">
-        <label for="customer-name" style="font-size: 1.2em;">ชื่อผู้ใช้:</label>
-        <input type="text" id="customer-name" placeholder="กรอกชื่อของคุณ" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+        <section class="payment-method">
+            <h2>💳 วิธีชำระเงิน</h2>
+            <h3>เลือกวิธีชำระเงิน</h3>
+            <select id="payment-method" onchange="togglePaymentFields()">
+                <option value="cash">เงินสด</option>
+                <option value="transfer">โอนเงิน</option>
+            </select>
+
+            <div id="qr-code" class="payment-option">
+                <img src="https://assets.onecompiler.app/433gecjsy/437zsd83w/S__10379267.jpg" alt="QR Code สำหรับโอนเงิน" />
+                <p>ชื่อบัญชี: นายฮารน กูเต๊ะ</p>
+            </div>
+
+            <div id="cash-payment" class="payment-option">
+                <button onclick="submitOrder()">สั่งซื้อ</button>
+            </div>
+
+            <div id="transfer-payment" class="payment-option">
+                <label for="slip-upload">อัพโหลดสลิปการโอน</label>
+                <input type="file" id="slip-upload" />
+                <button onclick="submitOrder()">สั่งซื้อ</button>
+            </div>
+        </section>
+
+        <button id="back-button" onclick="window.location.href='index.html'">
+            <img src="https://img.icons8.com/?size=100&id=7811&format=png&color=FFFFFF" alt="Back" />
+        </button>
     </div>
-    <p><strong>จำนวนสินค้าในตะกร้า: </strong><span id="cart-count">0</span> รายการ</p> <!-- เพิ่มจำนวนสินค้าในตะกร้า -->
-    <ul id="cart-list"></ul>
-    <p><strong>รวมทั้งหมด:</strong> <span id="total-price">0</span> บาท</p>
-    
 
-    <h3>💳 วิธีชำระเงิน</h3>
-    <label for="payment-method">เลือกวิธีชำระเงิน</label>
-    <select id="payment-method" onchange="togglePaymentFields()">
-        <option value="cash">เงินสด</option>
-        <option value="transfer">โอนเงิน</option>
-    </select>
-
-    <div id="qr-code">
-        <label>สแกนคิวอาร์โค้ดสำหรับโอนเงิน</label>
-        <img src="https://assets.onecompiler.app/433gecjsy/437zsd83w/S__10379267.jpg" 
-             alt="QR Code สำหรับโอนเงิน" style="width: 200px; height: 200px;">
-        <p>ชื่อบัญชี นายฮารน กูเต๊ะ</p>
-    </div>
-
-    <div id="cash-payment" style="display: block;">
-        <button onclick="submitOrder()">✅ สั่งซื้อ (เงินสด)</button>
-    </div>
-    <div id="transfer-payment" style="display: none;">
-        <label for="slip-upload">อัพโหลดสลิปการโอน</label>
-        <input type="file" id="slip-upload">
-        <button onclick="submitOrder()">✅ สั่งซื้อ (โอนเงิน)</button>
-    </div>
-
-    <button id="back-button" onclick="window.location.href='index.html'">
-        <img src="https://img.icons8.com/?size=100&id=7811&format=png&color=FFFFFF" alt="Back" style="width: 50px; height: 50px;">
-    </button>
-    
- <script src="cart.js"></script>
+    <script src="cart.js"></script>
 </body>
 </html>

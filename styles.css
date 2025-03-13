@@ -44,7 +44,7 @@ html {
     display: flex;
     gap: 15px;
     justify-content: auto;
-    padding-left: 500px;
+    padding-left: 740px;
     width: 100%;
     margin-top: -90px;
 }
@@ -151,7 +151,8 @@ input, select {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    padding-top: 10px; /* เพิ่ม padding ให้กับเนื้อหาภายใน */
+    padding-top: 20px; /* เพิ่ม padding ให้กับเนื้อหาภายใน */
+
 }
 
 #menu {
@@ -185,7 +186,7 @@ input, select {
 
 .drink img {
     width: 180px;
-    height: 120px;
+    height: 130px;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -351,3 +352,5 @@ html {
 
 
 }
+
+

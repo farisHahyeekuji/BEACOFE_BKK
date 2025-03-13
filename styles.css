@@ -273,7 +273,7 @@ button:disabled {
         margin-bottom: -5px; /* เพิ่มช่องว่างด้านล่าง */
         font-weight: bold; /* เพิ่มให้ข้อความใน header เป็นตัวหนา */
         margin-top: 10px;
-        margin-left: 30px;
+        margin-left: 15px;
     }
     .basket {
         cursor: pointer;

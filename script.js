@@ -202,3 +202,4 @@ function toggleMenu() {
     const menu = document.querySelector('.menu-category');
     menu.classList.toggle('show');
 }
+

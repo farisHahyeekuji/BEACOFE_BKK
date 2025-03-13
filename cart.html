@@ -86,11 +86,19 @@
     </style>
 </head>
 <body>
+    
 
     <h2>ตะกร้าสินค้า</h2>
+
+     <!-- 🆕 เพิ่มช่องกรอกชื่อผู้ใช้ -->
+    <div id="user-info" style="text-align: center; padding: 20px;">
+        <label for="customer-name" style="font-size: 1.2em;">ชื่อผู้ใช้:</label>
+        <input type="text" id="customer-name" placeholder="กรอกชื่อของคุณ" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+    </div>
     <p><strong>จำนวนสินค้าในตะกร้า: </strong><span id="cart-count">0</span> รายการ</p> <!-- เพิ่มจำนวนสินค้าในตะกร้า -->
     <ul id="cart-list"></ul>
     <p><strong>รวมทั้งหมด:</strong> <span id="total-price">0</span> บาท</p>
+    
 
     <h3>💳 วิธีชำระเงิน</h3>
     <label for="payment-method">เลือกวิธีชำระเงิน</label>
@@ -170,6 +178,66 @@
                 qrCode.style.display = 'block'; // แสดง QR Code เมื่อเลือกโอนเงิน
             }
         }
+
+       
+    const TELEGRAM_BOT_TOKEN = "7694936636:AAHhJcIRXPH4HLRfuvfWpR4wwagylNQyKyg"; // 🔴 ใส่ Bot Token ของคุณ
+    const TELEGRAM_CHAT_ID = "5963263519"; // 🔴 ใส่ Chat ID ของกลุ่มหรือบัญชี
+
+    function submitOrder() {
+    const customerName = document.getElementById("customer-name").value.trim();
+    if (!customerName) {
+        alert("❌ กรุณากรอกชื่อก่อนทำการสั่งซื้อ!");
+        return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+        alert("❌ ตะกร้าว่างเปล่า!");
+        return;
+    }
+
+    let orderDetails = `👤 *ลูกค้า: ${customerName}* \n`;
+    orderDetails += `🛒 *ออเดอร์ใหม่* \n\n`;
+
+    let totalAmount = 0;
+    cart.forEach((item, index) => {
+        orderDetails += `${index + 1}. ${item.name} (${item.sweetness}) x${item.quantity} = ${item.price * item.quantity} บาท\n`;
+        totalAmount += item.price * item.quantity;
+    });
+
+    orderDetails += `\n💰 *รวมทั้งหมด: ${totalAmount} บาท*`;
+
+    const paymentMethod = document.getElementById("payment-method").value;
+    orderDetails += paymentMethod === "cash" ? "\n💵 *ชำระเงิน: เงินสด*" : "\n🏦 *ชำระเงิน: โอนเงิน* (รออัพโหลดสลิป)";
+
+    // 🔄 ส่งไปยัง Telegram
+    const telegramAPI = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    fetch(telegramAPI, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: orderDetails,
+            parse_mode: "Markdown",
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            alert("✅ สั่งซื้อสำเร็จ! ออเดอร์ถูกส่งไปยัง Telegram แล้ว");
+            localStorage.removeItem("cart"); // เคลียร์ตะกร้า
+            updateCart(); // อัปเดต UI
+        } else {
+            alert("❌ ไม่สามารถส่งออเดอร์ไปยัง Telegram ได้");
+        }
+    })
+    .catch(error => {
+        console.error("Telegram API Error:", error);
+        alert("❌ เกิดข้อผิดพลาดในการส่งข้อมูล");
+    });
+}
+
+
 
     </script>
 

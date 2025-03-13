@@ -12,8 +12,16 @@
     <header>
         <div class="logo">Pasanmit Cafe</div>
       
-    
+        <div class="search-box">
+            <input type="text" id="search" placeholder="ค้นหาเมนู...">
+            <button onclick="searchMenu()">ค้นหา</button>
+        </div>
       
+        <div class="basket" onclick="showCartPage()">
+            <img src="https://img.icons8.com/?size=100&id=Ogxmypcz5fOR&format=png&color=FFFFFF" 
+                 alt="Cart" style="width: 30px; height: 30px;">
+            <span id="cart-count">0</span>
+        </div>
    
         <nav class="menu-category">
             <a href="#menu">Menu</a>
@@ -21,19 +29,8 @@
             <a href="#milk">Milk</a>
             <a href="#soda">Soda</a>
             <a href="#fruit">Fruit</a>
-            <div class="search-box">
-                <input type="text" id="search" placeholder="ค้นหาเมนู...">
-                <button onclick="searchMenu()">ค้นหา</button>
-            </div>
-            
-            <div class="basket" onclick="showCartPage()">
-                <img src="https://img.icons8.com/?size=100&id=Ogxmypcz5fOR&format=png&color=FFFFFF" 
-                     alt="Cart" style="width: 30px; height: 30px;">
-                <span id="cart-count">0</span>
-            </div>
         </nav>
-<!-- Hamburger menu icon -->
-<div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+
         
 
     

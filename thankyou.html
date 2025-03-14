@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="It is a window that shows that the message is finished and returns to the home page."> 
+    <meta name="keywords" content="Thank You, Confirmation, Submission Success, Back to Home">
+
+    <meta name="author" content="Harun Kuteh"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        @keyframes moveBackground {
+            0% { transform: translateX(0) translateY(0); }
+            50% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(50px) translateY(50px); }
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #519ce1, #acb6e5);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .background-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            opacity: 0.1;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            animation: moveBackground 10s linear infinite alternate;
+        }
+        
+        .thank-you {
+            background: white;
+            padding: 30px;
+            max-width: 450px;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease-in-out;
+        }
+        .thank-you:hover {
+            transform: scale(1.05);
+        }
+        .thank-you h3 {
+            color: #1f78d1;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .thank-you p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .thank-you a {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #1f78d1;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        .thank-you a:hover {
+            background: #ffffff;
+            color: #333;
+            box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.2);
+        }
+        /* Responsive Design */
+@media (max-width: 768px) {
+    body {
+            height: 150vh;
+       
+        }
+        .thank-you {
+            max-width: 325px;
+            margin-top: 10cm;
+            padding: 20px;
+        }
+
+        .background-text {
+            font-size: 2rem;
+        }
+        .thank-you p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+      
+}
+    </style>
+</head>
+<body>
+    <div class="background-text">
+        THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU
+    </div>
+    <div class="thank-you">
+        <h3>ขอบคุณที่สั่งซื้อกับเรา!</h3>
+        <p>ออเดอร์ของคุณถูกส่งเรียบร้อยแล้ว ทางเราจะดำเนินการให้เร็วที่สุด</p>
+        <a href="index.html">สั่งเครื่องดื่มใหม่</a>
+    </div>
+    
+</body>
+</html>

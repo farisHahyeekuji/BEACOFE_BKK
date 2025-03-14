@@ -129,6 +129,25 @@ header h2 {
     background-color: #6c4f3d;
 }
 
+#cart-list {
+    list-style: none; /* เอาจุดออก */
+    padding: 0;
+    color: black; /* เปลี่ยนสีตัวหนังสือของรายการสินค้าเป็นสีดำ */
+}
+
+#cart-list li {
+    margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างเมนู */
+    padding: 8px 0; /* เพิ่มช่องว่างด้านบนและล่างของแต่ละเมนู */
+    border-bottom: 1px solid #ddd; /* เส้นแบ่งเบาๆ เพื่อความชัดเจน (เอาออกได้) */
+}
+
+#account-name {
+    color: black; /* เปลี่ยนสีข้อความเป็นสีดำ */
+    margin-top: -15px;
+    
+}
+
+
 /* จัด QR Code และข้อมูลบัญชีให้อยู่ตรงกลาง */
 #qr-code {
     margin-bottom: 20px;
@@ -210,6 +229,22 @@ header h2 {
     background-color: #6c4f3d;
 }
 
+.remove-btn {
+    background-color: #ff4d4d; /* สีแดง */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.remove-btn:hover {
+    background-color: #cc0000; /* สีแดงเข้มขึ้นเมื่อเอาเมาส์ไปวาง */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -232,4 +267,38 @@ header h2 {
     #qr-code img {
         max-width: 80%;
     }
+}
+
+body {
+    color: #6c4f3d; /* เปลี่ยนสีข้อความทั้งหมดในเว็บเป็นน้ำตาล */
+}
+
+/* เฉพาะข้อความใน container */
+.container {
+    color: #6c4f3d;
+}
+
+/* เฉพาะข้อความหัวข้อ */
+ h2, h3, h4, h5, h6 {
+    color: #6c4f3d;
+}
+
+/* ข้อความในปุ่มให้ยังคงเป็นสีขาว */
+button {
+    color: white;
+}
+
+/* ข้อความในป้ายกำกับ (label) */
+label {
+    color: #6c4f3d;
+}
+
+/* ข้อความใน dropdown */
+select {
+    color: #6c4f3d;
+}
+
+/* ข้อความใน input */
+input {
+    color: #6c4f3d;
 }

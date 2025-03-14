@@ -108,8 +108,10 @@ input, select {
 .search-box input {
     padding: 8px;
     border-radius: 6px;
-    border: none;
+    border: 1px solid #ccc; /* เพิ่มเส้นขอบเพื่อให้ชัดเจนขึ้น */
     width: 30cm;
+    position: relative; /* ใช้ relative เพื่อให้สามารถอยู่ในตำแหน่งที่ถูกต้อง */
+    z-index: 2; /* ให้ input อยู่ข้างบนสุด */
 }
 
 .search-box button {
@@ -121,8 +123,11 @@ input, select {
     height: 38px;
     margin-left: 5px;
     margin-top: -16px;
-   
+    position: relative; 
+    z-index: 1; /* ปุ่มอยู่ข้างล่างสุด */
 }
+
+
 
 .basket {
     cursor: pointer;

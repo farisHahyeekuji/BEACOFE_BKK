@@ -311,10 +311,10 @@ button:disabled {
         margin: 0;
         padding: 0;
         text-align: center;
-        padding-top: 240px; /* เพิ่มระยะห่างให้เนื้อหาหลักไม่ทับ header */
+        padding-top: 220px; /* เพิ่มระยะห่างให้เนื้อหาหลักไม่ทับ header */
         width: 95%;
         margin-left: 10px;
-        
+        overflow: hidden; /* ปิดการเลื่อนลง */
     }
 
     .logo {

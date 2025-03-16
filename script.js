@@ -79,7 +79,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// เพิ่มเมื่อมีการสั่งซื้อ
-let orderCount = localStorage.getItem("orderCount") || 0;
-orderCount++;
-localStorage.setItem("orderCount", orderCount);

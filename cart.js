@@ -107,7 +107,7 @@
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
-            alert("✅ สั่งซื้อสำเร็จ! ทีมงานของเราจะเริ่มเตรียมเครื่องดื่มให้คุณทันที");
+            alert("✅ สั่งซื้อสำเร็จ! พนังงานของเราจะเริ่มเตรียมเครื่องดื่มให้คุณทันที");
             localStorage.removeItem("cart");
             updateCart();
             window.location.href = 'thankyou.html';

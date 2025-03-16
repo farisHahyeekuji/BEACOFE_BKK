@@ -314,7 +314,7 @@ button:disabled {
         padding-top: 220px; /* เพิ่มระยะห่างให้เนื้อหาหลักไม่ทับ header */
         width: 95%;
         margin-left: 10px;
-        overflow: hidden; /* ปิดการเลื่อนลง */
+       
     }
 
     .logo {

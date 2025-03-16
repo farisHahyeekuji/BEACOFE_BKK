@@ -1,0 +1,460 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cdb39a;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 130px; /* เพิ่มระยะห่างให้เนื้อหาหลักไม่ทับ header */
+    
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6b4a35;
+    padding: 20px;
+    color: white;
+    font-size: 30px ;
+    position: fixed; /* ทำให้ header ปักมุด */
+    top: 0; /* ติดอยู่ที่ด้านบน */
+    left: 0; /* ติดอยู่ที่ด้านซ้าย */
+    width: 98.1%; /* ให้ header กว้างเต็มหน้าจอ */
+    z-index: 1000; /* ทำให้ header อยู่เหนือเนื้อหาทั้งหมด */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับ header */
+   
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;  /* Ensure max width */
+    margin: 40px auto;
+    background: #6b4a35;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #391a0f;
+    padding-top: 20px; /* เพิ่ม padding ให้กับเนื้อหาภายใน */
+
+
+}
+
+html {
+    scroll-behavior: smooth;  /* เลื่อนนุ่มนวล */
+    scroll-padding-top: 190px;  /* เพิ่มพื้นที่เพื่อไม่ให้ทับ header */
+}
+
+.logo {
+    
+    font-size: 55px;
+    margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่าง */
+    font-weight: bold; /* เพิ่มให้ข้อความใน header เป็นตัวหนา */
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+/* ปรับให้เมนูอยู่ในแถวเดียวกันในขนาดปกติ */
+.menu-category {
+    display: flex;
+    gap: 15px;
+    justify-content: auto;
+    padding-left: 600px;
+    width: 100%;
+    margin-top: -90px;
+}
+
+/* ซ่อนเมนูในมือถือ */
+.menu-category a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    
+}
+
+.menu-category a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    padding: 6px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, border 0.3s ease;
+    box-sizing: border-box; /* ป้องกันการขยายขนาด */
+}
+
+/* แสดงกรอบสีเมื่ออยู่หน้านั้น */
+.menu-category a.active {
+   
+    background: #391a0f;
+}
+
+
+
+.menu-category a:hover {
+    background: #391a0f;
+    
+}
+
+
+
+h2 {
+    color: #f8f8f8;
+    font-size: 34px;
+    margin-top: 25px;
+}
+
+h1 {
+    color: #6b4226;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+input, select {
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 80%;  /* Adjust width to be more flexible */
+    max-width: 250px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    margin-left: 650px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search-box input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc; /* เพิ่มเส้นขอบเพื่อให้ชัดเจนขึ้น */
+    width: 30cm;
+    position: relative; /* ใช้ relative เพื่อให้สามารถอยู่ในตำแหน่งที่ถูกต้อง */
+    z-index: 2; /* ให้ input อยู่ข้างบนสุด */
+}
+
+.search-box button {
+    background-color: #391a0f;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    height: 38px;
+    margin-left: 5px;
+    margin-top: -16px;
+    position: relative; 
+    z-index: 1; /* ปุ่มอยู่ข้างล่างสุด */
+}
+
+
+
+.basket {
+    cursor: pointer;
+    font-size: 22px;
+    position: relative;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+
+.basket span {
+    background: red;
+    color: white;
+    font-size: 14px;
+    border-radius: 50%;
+    padding: 4px 8px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+
+
+
+#menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์ในคอม */
+    gap: 16px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+.drink-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์ในคอม */
+    gap: 16px;
+}
+
+.drink {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+    padding: 20px;
+    border: 4px solid #cdb39a;
+    border-radius: 10px;
+    background-color: #ece8da;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.drink img {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.sweetness {
+    width: 100%;
+    max-width: 300px;
+}
+
+button {
+    width: 60%;
+    padding: 10px;
+    background-color: #49291b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #502d1e;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+
+.option-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    max-width: 135px; /* กำหนดความกว้างสูงสุด */
+}
+
+.option-group label {
+    margin-right: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    max-width: 50px; /* กำหนดความกว้างสูงสุดของ label */
+}
+
+
+
+
+#menu, .drink-container {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์ */
+    gap: 16px; 
+    padding-bottom: 20px;
+    margin: 0 auto;
+    overflow-x: unset; /* เอา scrollbar ออก */
+}
+
+
+#menu::-webkit-scrollbar, .drink-container::-webkit-scrollbar {
+    height: 8px; /* ปรับความสูงของ scrollbar */
+}
+
+#menu::-webkit-scrollbar-thumb, .drink-container::-webkit-scrollbar-thumb {
+    background: #6b4226; /* สีของ scrollbar */
+    border-radius: 5px;
+}
+
+#menu::-webkit-scrollbar-track, .drink-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+
+/* จัดปุ่ม back-button ให้อยู่ด้านบนซ้าย */
+#back-button {
+    position: fixed;
+    top: 20px; /* วางปุ่มให้ห่างจากด้านบน */
+    left: 5px; /* วางปุ่มให้ห่างจากด้านซ้าย */
+    background-color: #6b4a35;
+    border: none;
+    padding: 1px;
+    width: 50px;
+    cursor: pointer;
+    z-index: 1000; /* ทำให้ปุ่มอยู่เหนือเนื้อหาอื่น */
+    margin-top: 15px;
+}
+
+#back-button img {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* ปรับให้แสดงผลสวยงามบนมือถือ */
+@media (max-width: 768px) {
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #cdb39a;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        padding-top: 240px; /* เพิ่มระยะห่างให้เนื้อหาหลักไม่ทับ header */
+        width: 95%;
+        margin-left: 10px;
+        
+    }
+
+    .logo {
+    
+        font-size: 40px;
+        margin-bottom: -5px; /* เพิ่มช่องว่างด้านล่าง */
+        font-weight: bold; /* เพิ่มให้ข้อความใน header เป็นตัวหนา */
+        margin-top: 10px;
+        margin-left: 35px;
+    }
+    .basket {
+        cursor: pointer;
+        font-size: 22px;
+        margin-top: -65px;
+        margin-left: 300px;
+
+    }
+    
+    .basket span {
+        background: red;
+        color: white;
+        font-size: 14px;
+        border-radius: 50%;
+        padding: 4px 8px;
+        position: absolute;
+        top: -8px;
+        right: -8px;
+    }
+
+/* ปรับให้เมนูอยู่ในแถวเดียวกันในขนาดปกติ */
+.menu-category {
+    display: flex;
+    gap: 10px;
+    justify-content: auto;
+    padding-left: 5px;
+    width: 100%;
+    margin-top: 0px;
+   
+}
+
+html {
+    scroll-behavior: smooth;  /* เลื่อนนุ่มนวล */
+    scroll-padding-top: 290px;  /* เพิ่มพื้นที่เพื่อไม่ให้ทับ header */
+}
+
+
+/* ซ่อนเมนูในมือถือ */
+.menu-category a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.search-box input {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    width: 5cm;
+   
+}
+
+.search-box button {
+    background-color: #333333;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    height: 40px;
+    width: 60px;
+    margin-left: 15px;
+    margin-top: -16px;
+   
+}
+
+/* ทำให้ #menu หรือ .drink-container เลื่อนในแนวนอน */
+#menu, .drink-container {
+    display: flex; /* ใช้ flexbox เพื่อให้ไอเท็มเรียงตามแนวนอน */
+    overflow-x: auto; /* ทำให้เมนูสามารถเลื่อนในแนวนอนได้ */
+    gap: 16px; /* ระยะห่างระหว่างไอเท็ม */
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;  /* Ensure max width */
+    margin: 0px auto;
+    background: #6b4a35;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #cdb39a;
+    padding-top: 20px; /* เพิ่ม padding ให้กับเนื้อหาภายใน */
+
+
+}
+/* จัดปุ่ม back-button ให้อยู่ด้านบนซ้าย */
+#back-button {
+    position: fixed;
+    top: 20px; /* วางปุ่มให้ห่างจากด้านบน */
+    left: 5px; /* วางปุ่มให้ห่างจากด้านซ้าย */
+    background-color: #6b4a35;
+    border: none;
+    padding: 1px;
+    width: 50px;
+    cursor: pointer;
+    z-index: 1000; /* ทำให้ปุ่มอยู่เหนือเนื้อหาอื่น */
+    margin-top: 15px;
+}
+
+#back-button img {
+    width: 40px;
+    height: 40px;
+}
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6b4a35;
+    padding: 20px;
+    color: white;
+    font-size: 30px ;
+    position: fixed; /* ทำให้ header ปักมุด */
+    top: 0; /* ติดอยู่ที่ด้านบน */
+    left: 0; /* ติดอยู่ที่ด้านซ้าย */
+    width: 98.1%; /* ให้ header กว้างเต็มหน้าจอ */
+    z-index: 1000; /* ทำให้ header อยู่เหนือเนื้อหาทั้งหมด */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับ header */
+   
+}
+
+}
+

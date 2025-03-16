@@ -1,40 +1,76 @@
-/* ปรับ header */
 header {
-    position: fixed;
-    text-align: center;
-    background-color: #804a26; 
-    color: #fafafa;
-    font-size: 24px;
-    width: 100%;
-    height: 120px; 
-    top: 0;
-    left: 0;
-    z-index: 1000;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    background-color: #6b4a35;
+    padding: 20px;
+    color: white;
+    font-size: 30px ;
+    position: fixed; /* ทำให้ header ปักมุด */
+    top: 0; /* ติดอยู่ที่ด้านบน */
+    left: 0; /* ติดอยู่ที่ด้านซ้าย */
+    width: 98.1%; /* ให้ header กว้างเต็มหน้าจอ */
+    z-index: 1000; /* ทำให้ header อยู่เหนือเนื้อหาทั้งหมด */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับ header */
+   
+}
+
+.logo {
+    
+    font-size: 55px;
+    margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่าง */
+    font-weight: bold; /* เพิ่มให้ข้อความใน header เป็นตัวหนา */
+    margin-top: 10px;
+    margin-left: 37%;
 }
 
 /* จัดให้ทุกอย่างอยู่ตรงกลาง */
 .container {
     max-width: 800px;
-    margin: 0 auto 50px; /* ลบ margin-top เพราะใช้ padding-top แทน */
+    margin: 0 auto 30px; /* ลบ margin-top เพราะใช้ padding-top แทน */
     padding: 30px;
-    background-color: #fff;
+    background-color: #f5f3f4;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px #391a0f;
     text-align: center;
 }
 
-/* ป้องกัน header ทับ container */
 body {
-    padding-top: 140px; 
+    font-family: Arial, sans-serif;
+    background-color: #cdb39a;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 170px; /* เพิ่มระยะห่างให้เนื้อหาหลักไม่ทับ header */
+    
 }
-
 /* ปรับตำแหน่ง "ตะกร้าสินค้า" ให้สูงขึ้น */
 header h2 {
     position: relative;
     top: -10px; 
+}
+
+.table-selection {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+}
+
+.table-selection h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.table-selection select {
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 5px;
+    border: 1px solid #d1b095;
+    background-color: #f7f1e3;
 }
 
 .user-info label {
@@ -63,9 +99,9 @@ header h2 {
 
 /* จัดให้ส่วนแสดงรายการสินค้าอยู่ตรงกลาง */
 .cart-summary {
-    margin-bottom: 30px;
-    border-top: 2px solid #f1f1f1;
-    padding-top: 20px;
+    margin-bottom: 35px;
+    border-top: 1px solid #391a0f;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -79,23 +115,19 @@ header h2 {
     width: 50%; /* กำหนดความกว้างเป็น 50% */
     max-width: 250px; /* หรือกำหนดขนาดสูงสุดที่ต้องการ */
     padding: 12px;
-    margin: 10px 0;
+    margin: 10px auto; /* ใช้ margin auto เพื่อให้ select อยู่ตรงกลาง */
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #d1b095;
     background-color: #f7f1e3;
     text-align: center;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 20px;
-  
+    display: block; /* ทำให้ select เป็นบล็อกเพื่อให้อยู่กลาง */
 }
-
 
 /* จัดให้วิธีชำระเงินอยู่ตรงกลาง */
 .payment-method {
     margin-bottom: 40px;
-    text-align: center;
+    text-align: center; /* ใช้ text-align สำหรับจัดตำแหน่ง */
 }
 
 .payment-option {
@@ -115,13 +147,8 @@ header h2 {
     cursor: pointer;
     transition: background-color 0.3s;
     display: block;
-    margin: 10px auto;
+    margin: 10px auto; /* ใช้ margin auto เพื่อให้ปุ่มอยู่ตรงกลาง */
 }
-
-.payment-option button:hover {
-    background-color: #6c4f3d;
-}
-
 
 .payment-option button:hover {
     background-color: #6c4f3d;
@@ -136,7 +163,7 @@ header h2 {
 #cart-list li {
     margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างเมนู */
     padding: 8px 0; /* เพิ่มช่องว่างด้านบนและล่างของแต่ละเมนู */
-    border-bottom: 1px solid #ddd; /* เส้นแบ่งเบาๆ เพื่อความชัดเจน (เอาออกได้) */
+    border-bottom: 1px solid #d0d0d0; /* เส้นแบ่งเบาๆ เพื่อความชัดเจน (เอาออกได้) */
 }
 
 #account-name {
@@ -162,12 +189,14 @@ header h2 {
 #back-button {
     position: fixed;
     top: 20px; /* วางปุ่มให้ห่างจากด้านบน */
-    left: 20px; /* วางปุ่มให้ห่างจากด้านซ้าย */
-    background-color: #804a26;
+    left: 5px; /* วางปุ่มให้ห่างจากด้านซ้าย */
+    background-color: #6b4a35;
     border: none;
-    padding: 15px;
+    padding: 1px;
+    width: 50px;
     cursor: pointer;
     z-index: 1000; /* ทำให้ปุ่มอยู่เหนือเนื้อหาอื่น */
+    margin-top: 15px;
 }
 
 #back-button img {
@@ -243,11 +272,24 @@ header h2 {
     background-color: #cc0000; /* สีแดงเข้มขึ้นเมื่อเอาเมาส์ไปวาง */
 }
 
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
+        padding: 14px;
     }
+    /* จัดให้ทุกอย่างอยู่ตรงกลาง */
+.container {
+    max-width: 300px;
+    margin: 0 auto 30px; /* ลบ margin-top เพราะใช้ padding-top แทน */
+    padding: 30px;
+    background-color: #ececec;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px #391a0f;
+    text-align: center;
+}
+
 
     .page-title {
         font-size: 30px;
@@ -265,6 +307,16 @@ header h2 {
     #qr-code img {
         max-width: 80%;
     }
+
+    .logo {
+    
+        font-size: 40px;
+        margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่าง */
+        font-weight: bold; /* เพิ่มให้ข้อความใน header เป็นตัวหนา */
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+    
 }
 
 body {

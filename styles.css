@@ -1,11 +1,11 @@
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+    background-color: #cdb39a;
     text-align: center;
-    padding-top: 130px; /* เพิ่มระยะห่างให้เนื้อหาหลักไม่ทับ header */
-    
+    padding-top: 50px;
+    margin: 0;
+    overflow: hidden; /* ปิดการเลื่อนลง */
 }
 
 header {
@@ -13,7 +13,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #6b4226;
+    background-color: #6b4a35;
     padding: 20px;
     color: white;
     font-size: 30px ;
@@ -26,9 +26,14 @@ header {
    
 }
 
-html {
-    scroll-behavior: smooth;  /* เลื่อนนุ่มนวล */
-    scroll-padding-top: 190px;  /* เพิ่มพื้นที่เพื่อไม่ให้ทับ header */
+.container {
+    max-width: 600px;
+    background: #ece8da;
+    padding: 30px;
+    margin: 100px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 0; /* ลบช่องว่างระหว่างองค์ประกอบ */
 }
 
 .logo {
@@ -37,325 +42,82 @@ html {
     margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่าง */
     font-weight: bold; /* เพิ่มให้ข้อความใน header เป็นตัวหนา */
     margin-top: 10px;
-}
-
-/* ปรับให้เมนูอยู่ในแถวเดียวกันในขนาดปกติ */
-.menu-category {
-    display: flex;
-    gap: 15px;
-    justify-content: auto;
-    padding-left: 740px;
-    width: 100%;
-    margin-top: -90px;
-}
-
-/* ซ่อนเมนูในมือถือ */
-.menu-category a {
-    text-decoration: none;
-    color: white;
-    font-size: 25px;
-    padding: 6px 10px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-
-
-
-
-.menu-category a:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-
-
-h2 {
-    color: #333;
-    font-size: 24px;
-    margin-top: 25px;
+    margin-left: 37%;
+    
 }
 
 h1 {
     color: #6b4226;
-    font-size: 32px;
+}
+
+p {
+    font-size: 20px;
     margin-bottom: 20px;
-}
-
-label {
-    font-size: 16px;
-    margin-bottom: 8px;
-    display: block;
-}
-
-input, select {
-    font-size: 14px;
-    padding: 8px;
-    margin-bottom: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 80%;  /* Adjust width to be more flexible */
-    max-width: 250px;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    margin-left: 650px;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.search-box input {
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc; /* เพิ่มเส้นขอบเพื่อให้ชัดเจนขึ้น */
-    width: 30cm;
-    position: relative; /* ใช้ relative เพื่อให้สามารถอยู่ในตำแหน่งที่ถูกต้อง */
-    z-index: 2; /* ให้ input อยู่ข้างบนสุด */
-}
-
-.search-box button {
-    background-color: #333333;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 6px;
-    height: 38px;
-    margin-left: 5px;
-    margin-top: -16px;
-    position: relative; 
-    z-index: 1; /* ปุ่มอยู่ข้างล่างสุด */
-}
-
-
-
-.basket {
-    cursor: pointer;
-    font-size: 22px;
-    position: relative;
-    margin-right: 30px;
-    margin-left: 0px;
-}
-
-.basket span {
-    background: red;
-    color: white;
-    font-size: 14px;
-    border-radius: 50%;
-    padding: 4px 8px;
-    position: absolute;
-    top: -8px;
-    right: -8px;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;  /* Ensure max width */
-    margin: 40px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    padding-top: 20px; /* เพิ่ม padding ให้กับเนื้อหาภายใน */
-
-}
-
-#menu {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์ในคอม */
-    gap: 16px;
-    padding-bottom: 20px;
-    margin: 0 auto;
-}
-
-.drink-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์ในคอม */
-    gap: 16px;
-}
-
-.drink {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 400px;
-    padding: 20px;
-    border: 4px solid #443229;
-    border-radius: 10px;
-    background-color: #ecd3bf;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.drink img {
-    width: 180px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.sweetness {
-    width: 100%;
-    max-width: 300px;
 }
 
 button {
-    width: 60%;
-    padding: 10px;
     background-color: #7a4d23;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 18px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #502d1e;
-}
-
-button:disabled {
-    background-color: #ccc;
-}
-
-
-.option-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 3px;
-}
-
-.option-group label {
-    margin-right: 10px;
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-
-
-
-/* ทำให้ #menu หรือ .drink-container เลื่อนในแนวนอน */
-#menu, .drink-container {
-    display: flex; /* ใช้ flexbox เพื่อให้ไอเท็มเรียงตามแนวนอน */
-    overflow-x: auto; /* ทำให้เมนูสามารถเลื่อนในแนวนอนได้ */
-    gap: 16px; /* ระยะห่างระหว่างไอเท็ม */
-    padding-bottom: 20px;
-    margin: 0 auto;
-}
-
-#menu::-webkit-scrollbar, .drink-container::-webkit-scrollbar {
-    height: 8px; /* ปรับความสูงของ scrollbar */
-}
-
-#menu::-webkit-scrollbar-thumb, .drink-container::-webkit-scrollbar-thumb {
-    background: #6b4226; /* สีของ scrollbar */
-    border-radius: 5px;
-}
-
-#menu::-webkit-scrollbar-track, .drink-container::-webkit-scrollbar-track {
-    background: #f0f0f0;
+    background-color: #407b34;
 }
 
 /* ปรับให้แสดงผลสวยงามบนมือถือ */
 @media (max-width: 768px) {
-
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        padding-top: 240px; /* เพิ่มระยะห่างให้เนื้อหาหลักไม่ทับ header */
-        width: 95%;
-        margin-left: 10px;
-        
-    }
-
     .logo {
     
-        font-size: 45px;
+        font-size: 40px;
         margin-bottom: -5px; /* เพิ่มช่องว่างด้านล่าง */
         font-weight: bold; /* เพิ่มให้ข้อความใน header เป็นตัวหนา */
         margin-top: 10px;
-        margin-left: 15px;
+        margin-left: 35px;
     }
-    .basket {
-        cursor: pointer;
-        font-size: 22px;
-        margin-top: -65px;
-        margin-left: 300px;
 
+    h1 {
+        color: #6b4226;
+        font-size: 23px;
     }
     
-    .basket span {
-        background: red;
-        color: white;
-        font-size: 14px;
-        border-radius: 50%;
-        padding: 4px 8px;
-        position: absolute;
-        top: -8px;
-        right: -8px;
+    p {
+        font-size: 18px;
+        margin-bottom: 20px;
     }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #cdb39a;
+        text-align: center;
+        padding-top: 100px;
+        margin: 0;
+        width: 95%;
+        margin-left: 10px;
+       
+    }
+}
 
-/* ปรับให้เมนูอยู่ในแถวเดียวกันในขนาดปกติ */
-.menu-category {
+
+.image-slider {
+    position: relative;
+    width: 60%;
+    max-width: 600px; /* กำหนดขนาดที่เหมาะสม */
+    margin: 20px auto;
+    overflow: hidden; /* ซ่อนส่วนเกิน */
+}
+
+.slider-wrapper {
     display: flex;
-    gap: 10px;
-    justify-content: auto;
-    padding-left: 50px;
-    width: 100%;
-    margin-top: 0px;
-   
+    width: 300%; /* ต้องมีขนาด 3 เท่าของ container */
+    transition: transform 1s ease-in-out;
 }
 
-html {
-    scroll-behavior: smooth;  /* เลื่อนนุ่มนวล */
-    scroll-padding-top: 290px;  /* เพิ่มพื้นที่เพื่อไม่ให้ทับ header */
+.slider-image {
+    width: 33.3333%; /* ใช้ 33.3333% เพื่อให้ภาพ 3 ภาพมีขนาดเท่ากัน */
+    height: 280px; /* ความสูงที่เหมาะสม */
+    object-fit: cover; /* ให้ภาพเต็มพื้นที่ */
 }
-
-
-/* ซ่อนเมนูในมือถือ */
-.menu-category a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    padding: 6px 10px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    
-}
-.search-box {
-    display: flex;
-    align-items: center;
-    margin-left: 0px;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.search-box input {
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
-    width: 5cm;
-   
-}
-
-.search-box button {
-    background-color: #333333;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 6px;
-    height: 40px;
-    width: 60px;
-    margin-left: 15px;
-    margin-top: -16px;
-   
-}
-
-
-}
-
-

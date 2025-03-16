@@ -6,22 +6,34 @@
     <meta name="keywords" content="Pasanmit Cafe, ตะกร้าสินค้า, สั่งซื้อ, เครื่องดื่ม, ร้านกาแฟ, Yala">    
     <meta name="author" content="Pasanmit Cafe">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ตะกร้าสินค้า</title>
+    <title>ตะกร้าเครื่องดื่ม</title>
     <link rel="stylesheet" href="cart.css">
 </head>
 <body>
     
-        <header>
-            <h1 class="page-title">ตะกร้าสินค้า</h1>
-        </header>
+       <header>
+        <div class="logo">ตะกร้าเครื่องดื่ม</div>
+    </header>
         <div class="container">
         <div class="user-info">
-            <h2>ชื่อผู้สั่งซื่อ</h2>
+            <h2>ชื่อผู้สั่งซื้อ</h2>
             <input type="text" id="customer-name" placeholder="กรอกชื่อของคุณ" />
         </div>
 
+        <div class="table-selection">
+            <h3>เลือกโต๊ะของคุณ</h3>
+            <select id="table-selection">
+                <option value="1">โต๊ะ 1</option>
+                <option value="2">โต๊ะ 2</option>
+                <option value="3">โต๊ะ 3</option>
+                <option value="4">โต๊ะ 4</option>
+                <option value="5">โต๊ะ 5</option>
+            </select>
+        </div>
+        
+
         <div class="cart-summary">
-            <p><strong>จำนวนสินค้าในตะกร้าสินค้า:</strong> <span id="cart-count">0</span> รายการ</p>
+            <p><strong>จำนวนเครื่องดื่มในตะกร้า:</strong> <span id="cart-count">0</span> รายการ</p>
             <ul id="cart-list"></ul>
             <p><strong>รวมทั้งหมด:</strong> <span id="total-price">0</span> บาท</p>
         </div>
@@ -35,7 +47,7 @@
             </select>
 
             <div id="qr-code" class="payment-option">
-                <img src="https://assets.onecompiler.app/433gecjsy/43bprtgr8/S__10878981.jpg" alt="QR Code สำหรับโอนเงิน" />
+                <img src="https://assets.onecompiler.app/433gecjsy/43bwucgkv/S__10878981-removebg-preview.png" alt="QR Code สำหรับโอนเงิน" />
                 <p id="account-name">ชื่อบัญชี: นางสาวมารีน่า อูเซ็งดอละ</p>
 
             </div>
@@ -51,8 +63,8 @@
             </div>
         </section>
 
-        <button id="back-button" onclick="window.location.href='index.html'">
-            <img src="https://img.icons8.com/?size=100&id=7811&format=png&color=FFFFFF" alt="Back" />
+        <button id="back-button" onclick="window.location.href='allmenu.html'">
+            <img src="https://img.icons8.com/?size=100&id=iUcfhPoyfZEu&format=png&color=FFFFFF" alt="Back" />
         </button>
     </div>
 

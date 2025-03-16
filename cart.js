@@ -60,40 +60,40 @@
   const TELEGRAM_CHAT_ID = "5963263519"; // 🔴 ใส่ Chat ID ของกลุ่มหรือบัญชี
 
   function submitOrder() {
-    // ตรวจสอบชื่อผู้สั่งซื้อ
     const customerName = document.getElementById("customer-name").value.trim();
+    const tableSelection = document.getElementById("table-selection").value;
+
     if (!customerName) {
         alert("❌ กรุณากรอกชื่อก่อนทำการสั่งซื้อ!");
         return;
     }
-  
-    // ตรวจสอบว่าตะกร้าสินค้าไม่ว่างเปล่า
+
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (cart.length === 0) {
         alert("❌ ตะกร้าว่างเปล่า!");
         return;
     }
-  
-    // สร้างรายละเอียดของออเดอร์
-    let orderDetails = `👤 *ลูกค้า: ${customerName}* \n`;
-    orderDetails += `🛒 *ออเดอร์ใหม่* \n\n`;
-  
+
+    // เพิ่มจำนวนการสั่งซื้อเฉพาะเมื่อกดปุ่ม "สั่งซื้อ" ในหน้า cart.html
+    let orderCount = localStorage.getItem("orderCount") || 0;
+    orderCount = parseInt(orderCount) + 1;  // เพิ่ม 1 ทุกครั้งที่กด "สั่งซื้อ"
+    localStorage.setItem("orderCount", orderCount); // อัปเดต LocalStorage
+
+    let orderDetails = `🛒 *ออเดอร์ใหม่* \n\n`;
+    orderDetails += `👤 *ลูกค้า: ${customerName}* \n`;
+    orderDetails += `🪑 *โต๊ะที่เลือก: โต๊ะ ${tableSelection}* \n\n`;
+
     let totalAmount = 0;
     cart.forEach((item, index) => {
         orderDetails += `${index + 1}. ${item.name} (${item.sweetness}) x${item.quantity} = ${item.price * item.quantity} บาท\n`;
         totalAmount += item.price * item.quantity;
     });
-  
+
     orderDetails += `\n💰 *รวมทั้งหมด: ${totalAmount} บาท*`;
-  
+
     const paymentMethod = document.getElementById("payment-method").value;
-    if (paymentMethod === "cash") {
-        orderDetails += "\n💵 *ชำระเงิน: เงินสด*";
-    } else if (paymentMethod === "transfer") {
-        orderDetails += "\n🏦 *ชำระเงิน: โอนเงิน*";
-    }
-  
-    // ส่งข้อมูลไปยัง Telegram
+    orderDetails += paymentMethod === "cash" ? "\n💵 *ชำระเงิน: เงินสด*" : "\n🏦 *ชำระเงิน: โอนเงิน*";
+
     const telegramAPI = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
     fetch(telegramAPI, {
         method: "POST",
@@ -107,29 +107,20 @@
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
-            // ถ้าเลือกวิธีการโอนเงินจะให้มีการอัปโหลดสลิป
-            if (paymentMethod === "transfer") {
-                const slipUpload = document.getElementById("slip-upload").files[0];
-                if (slipUpload) {
-                    sendSlipToTelegram(slipUpload); // ส่งสลิปไปยัง Telegram
-                } else {
-                    alert("❌ กรุณาอัปโหลดสลิปการโอนเงิน!");
-                }
-            } else {
-                alert("✅ สั่งซื้อสำเร็จ! ทีมงานของเราจะเริ่มเตรียมเครื่องดื่มให้คุณทันที");
-                localStorage.removeItem("cart"); // ลบตะกร้าหลังจากสั่งซื้อ
-                updateCart(); // อัปเดตตะกร้าให้แสดงสถานะว่าง
-                window.location.href = 'thankyou.html'; // ไปยังหน้าขอบคุณ
-            }
+            alert("✅ สั่งซื้อสำเร็จ! ทีมงานของเราจะเริ่มเตรียมเครื่องดื่มให้คุณทันที");
+            localStorage.removeItem("cart");
+            updateCart();
+            window.location.href = 'thankyou.html';
         } else {
-            alert("❌ ไม่สามารถส่งออเดอร์ไปยัง ทีมงานของเรา ได้");
+            alert("❌ ไม่สามารถส่งออเดอร์ไปยังทีมงานได้");
         }
     })
     .catch(error => {
         console.error("Telegram API Error:", error);
         alert("❌ เกิดข้อผิดพลาดในการส่งข้อมูล");
     });
-  }
+}
+
   
   // ฟังก์ชันสำหรับส่งสลิปการโอนเงินไปยัง Telegram
   function sendSlipToTelegram(slipFile) {

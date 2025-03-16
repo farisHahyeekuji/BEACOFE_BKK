@@ -66,3 +66,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function showCartPage() {
     window.location.href = "cart.html";
 }
+
+// JavaScript: เช็ค URL และเพิ่ม class 'active' ให้ลิงก์ที่ตรงกัน
+document.addEventListener("DOMContentLoaded", function() {
+    let links = document.querySelectorAll(".menu-category a");
+    let currentURL = window.location.href;
+
+    links.forEach(link => {
+        if (link.href === currentURL) {
+            link.classList.add("active"); // เพิ่ม class 'active' ให้ลิงก์ที่อยู่หน้านั้น
+        }
+    });
+});
+
+// เพิ่มเมื่อมีการสั่งซื้อ
+let orderCount = localStorage.getItem("orderCount") || 0;
+orderCount++;
+localStorage.setItem("orderCount", orderCount);

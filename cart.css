@@ -3,7 +3,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #C0392B;
+    background-color: #921a1c;
     padding: 20px;
     color: white;
     font-size: 30px ;
@@ -33,13 +33,13 @@ header {
     padding: 30px;
     background-color: #f5f3f4;
     border-radius: 10px;
-    box-shadow: 0 4px 20px #C0392B;
+    box-shadow: 0 4px 20px #921a1c;
     text-align: center;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #efb4aa;
+    background-color: #E6B7B8;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -71,13 +71,13 @@ header h2 {
     width: 100%;
     max-width: 200px;
     border-radius: 5px;
-    border: 1px solid #d1b095;
+    border: 2px solid #921a1c;
     background-color: #f7f1e3;
 }
 
 .user-info label {
     font-size: 18px;
-    color: #C0392B;
+    color: #921a1c;
 }
 
 /* จัด user-info ให้อยู่กึ่งกลาง */
@@ -91,7 +91,7 @@ header h2 {
     max-width: 250px; /* กำหนดขนาดสูงสุด ไม่ให้ยาวเกิน */
     padding: 10px;
     margin-top: 10px;
-    border: 1px solid #d1b095;
+    border: 2px solid #921a1c;
     border-radius: 5px;
     font-size: 16px;
     background-color: #f7f1e3;
@@ -102,7 +102,7 @@ header h2 {
 /* จัดให้ส่วนแสดงรายการสินค้าอยู่ตรงกลาง */
 .cart-summary {
     margin-bottom: 35px;
-    border-top: 1px solid #C0392B;
+    border-top: 1px solid #921a1c;
     padding-top: 10px;
     text-align: center;
 }
@@ -120,7 +120,7 @@ header h2 {
     margin: 10px auto; /* ใช้ margin auto เพื่อให้ select อยู่ตรงกลาง */
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #d1b095;
+    border: 2px solid #921a1c;
     background-color: #f7f1e3;
     text-align: center;
     display: block; /* ทำให้ select เป็นบล็อกเพื่อให้อยู่กลาง */
@@ -140,7 +140,7 @@ header h2 {
 .payment-option button {
     width: 60%; /* กำหนดความกว้างเป็น 60% ของ container */
     max-width: 250px; /* หรือกำหนดขนาดสูงสุดที่ต้องการ */
-    background-color: #C0392B;
+    background-color: #921a1c;
     color: #fff;
     padding: 12px 20px;
     font-size: 16px;
@@ -182,7 +182,7 @@ header h2 {
     position: fixed;
     top: 20px; /* วางปุ่มให้ห่างจากด้านบน */
     left: 5px; /* วางปุ่มให้ห่างจากด้านซ้าย */
-    background-color: #C0392B;
+    background-color: #921a1c;
     border: none;
     padding: 1px;
     width: 50px;

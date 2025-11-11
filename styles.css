@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #efb4aa;
+    background-color: #E6B7B8;
     text-align: center;
     padding-top: 50px;
     margin: 0;
@@ -13,7 +13,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #C0392B;
+    background-color: #921a1c;
     padding: 20px;
     color: white;
     font-size: 30px ;
@@ -47,7 +47,7 @@ header {
 }
 
 h1 {
-    color: #C0392B;
+    color: #921a1c;
 }
 
 p {
@@ -56,7 +56,7 @@ p {
 }
 
 button {
-    background-color: #C0392B;
+    background-color: #921a1c;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -81,7 +81,7 @@ button:hover {
     }
 
     h1 {
-        color: #C0392B;
+        color: #921a1c;
         font-size: 23px;
     }
     
@@ -91,7 +91,7 @@ button:hover {
     }
     body {
         font-family: Arial, sans-serif;
-        background-color: #DA7A6B;
+        background-color: #E6B7B8;
         text-align: center;
         padding-top: 100px;
         margin: 0;

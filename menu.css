@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #efb4aa;
+    background-color: #E6B7B8;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -13,7 +13,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #C0392B;
+    background-color: #921a1c;
     padding: 20px;
     color: white;
     font-size: 30px ;
@@ -30,7 +30,7 @@ header {
     width: 90%;
     max-width: 1200px;  /* Ensure max width */
     margin: 40px auto;
-    background: #C0392B;
+    background: #921a1c;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px #921d10;
@@ -87,13 +87,13 @@ html {
 /* แสดงกรอบสีเมื่ออยู่หน้านั้น */
 .menu-category a.active {
    
-    background: #8a2318;
+    background: #480d0e;
 }
 
 
 
 .menu-category a:hover {
-    background: #8a2318;
+    background: #480d0e;
     
 }
 
@@ -106,14 +106,14 @@ h2 {
 }
 
 h1 {
-    color: #C0392B;
+    color: #921a1c;
     font-size: 32px;
     margin-bottom: 20px;
     
 }
 
 h3 {
-    color: #C0392B;
+    color: #921a1c;
     font-size: 25px;
     margin-bottom: 20px;
     margin: 0;
@@ -159,7 +159,7 @@ input, select {
 }
 
 .search-box button {
-    background-color: #391a0f;
+    background-color: #5b1112;
     border: none;
     padding: 8px 12px;
     cursor: pointer;
@@ -239,7 +239,7 @@ input, select {
 button {
     width: 60%;
     padding: 10px;
-    background-color: #C0392B;
+    background-color: #921a1c;
     color: white;
     border: none;
     border-radius: 5px;
@@ -247,7 +247,7 @@ button {
 }
 
 button:hover {
-    background-color: #78261c;
+    background-color: #461711;
 }
 
 button:disabled {
@@ -287,7 +287,7 @@ button:disabled {
 }
 
 #menu::-webkit-scrollbar-thumb, .drink-container::-webkit-scrollbar-thumb {
-    background: #C0392B; /* สีของ scrollbar */
+    background: #921a1c; /* สีของ scrollbar */
     border-radius: 5px;
 }
 
@@ -301,7 +301,7 @@ button:disabled {
     position: fixed;
     top: 20px; /* วางปุ่มให้ห่างจากด้านบน */
     left: 5px; /* วางปุ่มให้ห่างจากด้านซ้าย */
-    background-color: #C0392B;
+    background-color: #921a1c;
     border: none;
     padding: 1px;
     width: 50px;
@@ -321,7 +321,7 @@ button:disabled {
 
     body {
         font-family: Arial, sans-serif;
-        background-color: #efb4aa;
+        background-color: #E6B7B8;
         margin: 0;
         padding: 0;
         text-align: center;
@@ -426,7 +426,7 @@ html {
     width: 90%;
     max-width: 1200px;  /* Ensure max width */
     margin: 0px auto;
-    background: #C0392B;
+    background: #921a1c;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 15px #cdb39a;
@@ -439,7 +439,7 @@ html {
     position: fixed;
     top: 20px; /* วางปุ่มให้ห่างจากด้านบน */
     left: 5px; /* วางปุ่มให้ห่างจากด้านซ้าย */
-    background-color: #C0392B;
+    background-color: #921a1c;
     border: none;
     padding: 1px;
     width: 50px;
@@ -457,7 +457,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #C0392B;
+    background-color: #921a1c;
     padding: 20px;
     color: white;
     font-size: 30px ;

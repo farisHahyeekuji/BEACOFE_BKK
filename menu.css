@@ -483,48 +483,5 @@ h4 {
 
 
 }
-@media (max-width: 768px) {
-
-    /* ปรับขนาด header ให้เล็กลง */
-    header {
-        font-size: 16px; /* เดิม 20px */
-        padding: 10px;
-    }
-
-    /* ปรับขนาดโลโก้ */
-    .logo {
-        font-size: 28px; /* เดิม 40px */
-        margin-left: 20px;
-    }
-
-    /* ปรับขนาดข้อความเมนู */
-    .menu-category a {
-        font-size: 14px; /* เดิม 20px */
-        padding: 4px 8px;
-    }
-
-    /* ปรับขนาดหัวข้อภายในเนื้อหา */
-    h1 {
-        font-size: 22px; /* เดิม 32px */
-    }
-
-    h2 {
-        font-size: 20px; /* เดิม 34px */
-    }
-
-    h3 {
-        font-size: 16px; /* เดิม 25px */
-    }
-
-    h4 {
-        font-size: 10px; /* เดิม 10px — คงไว้ได้ */
-    }
-
-    /* ปรับขนาดข้อความปุ่ม */
-    button {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
 
 }

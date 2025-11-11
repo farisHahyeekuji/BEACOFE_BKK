@@ -30,7 +30,7 @@ header {
     max-width: 600px;
     background: #ece8da;
     padding: 30px;
-    margin: 100px auto;
+    margin: 50px auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     gap: 0; /* ลบช่องว่างระหว่างองค์ประกอบ */

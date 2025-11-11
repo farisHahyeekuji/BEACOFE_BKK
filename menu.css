@@ -469,6 +469,19 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับ header */
    
 }
+h3 {
+    color: #921a1c;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin: 0;
+}
+h4 {
+    color: #6b4226;
+    font-size: 10px;
+    margin-bottom: 20px;
+    margin: 0;
+
 
 }
 
+}

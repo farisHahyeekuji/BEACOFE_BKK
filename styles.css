@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #cdb39a;
+    background-color: #efb4aa;
     text-align: center;
     padding-top: 50px;
     margin: 0;
@@ -13,7 +13,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #6b4a35;
+    background-color: #C0392B;
     padding: 20px;
     color: white;
     font-size: 30px ;
@@ -47,7 +47,7 @@ header {
 }
 
 h1 {
-    color: #6b4226;
+    color: #C0392B;
 }
 
 p {
@@ -56,7 +56,7 @@ p {
 }
 
 button {
-    background-color: #7a4d23;
+    background-color: #C0392B;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -81,7 +81,7 @@ button:hover {
     }
 
     h1 {
-        color: #6b4226;
+        color: #C0392B;
         font-size: 23px;
     }
     
@@ -91,7 +91,7 @@ button:hover {
     }
     body {
         font-family: Arial, sans-serif;
-        background-color: #cdb39a;
+        background-color: #DA7A6B;
         text-align: center;
         padding-top: 100px;
         margin: 0;
@@ -104,7 +104,8 @@ button:hover {
 
 .image-slider {
     position: relative;
-    width: 60%;
+    width: 270px;
+    height: 300px;
     max-width: 600px; /* กำหนดขนาดที่เหมาะสม */
     margin: 20px auto;
     overflow: hidden; /* ซ่อนส่วนเกิน */

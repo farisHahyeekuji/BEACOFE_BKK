@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Pasanmit Cafe ระบบสั่งเครื่องดื่มออนไลน์ เมนูกาแฟ นม โซดา">
-    <meta name="keywords" content="เมนูกาแฟ, สั่งเครื่องดื่ม, Pasanmit Cafe">
+    <meta name="keywords" content="รวมเมนูทั้งหมด, สั่งเครื่องดื่ม, Pasanmit Cafe">
     <meta name="author" content="Pasanmit Cafe">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasanmit Cafe - Order System</title>
+    <title>BEACOFE.BKK - Order System</title>
     <link rel="stylesheet" href="menu.css">
 </head>
 
 <body>
     <header>
-        <div class="logo">Pasanmit Café</div>
+        <div class="logo">BEACOFE.BKK</div>
         <div class="search-box">
             <input type="text" id="search" placeholder="ค้นหาเมนู...">
             <button onclick="searchMenu()">ค้นหา</button>
         </div>
+      
         <div class="basket" onclick="showCartPage()">
             <img src="https://img.icons8.com/?size=100&id=Ogxmypcz5fOR&format=png&color=FFFFFF" 
                  alt="Cart" style="width: 30px; height: 30px;">
             <span id="cart-count">0</span>
         </div>
+
         <nav class="menu-category">
-            <a href="allmenu.html">All Menu</a>
             <a href="coffee.html">Coffee</a>
-            <a href="milk.html">Milk</a>
+            <a href="milk.html">Tea</a>
+            <a href="allmenu.html">Matcha</a>
             <a href="soda.html">Soda</a>
         </nav>
     </header>
@@ -33,14 +35,15 @@
     <button id="back-button" onclick="window.location.href='index.html'">
         <img src="https://img.icons8.com/?size=100&id=iUcfhPoyfZEu&format=png&color=FFFFFF" alt="Back" />
     </button>
-
-<!-- เมนูเครื่องดื่ม กาแฟ -->
+    <!-- เมนูเครื่องดื่ม กาแฟ -->
 <main class="container">
-    <h2 id="coffee">COFFEE</h2>
+    <h2 id="coffee">MENU COFFEE</h2>
     <div class="drink-container">
+        
         <div class="drink">
             <h3>อเมริกาโน่</h3>
-            <img src="https://assets.onecompiler.app/433gecjsy/43crtadhw/5fc61df12d6ac693010142-removebg-preview.png" alt="Americano">
+            <h4>Ice Americano</h4>
+            <img src="Images/Americano.png" alt="Americano">
             <p>ราคา: 55 บาท</p>
             <div class="option-group">
                 <label>หวาน:</label>
@@ -56,93 +59,12 @@
             </div>
             <button onclick="addToCart('อเมริกาโน่', 55, this)">เพิ่มลงตะกร้า</button>
         </div>
-       
-            <div class="drink">
-                <h3>ลาเต้</h3>
-                <img src="https://assets.onecompiler.app/433gecjsy/43crtadhw/55555%E0%B8%9F0%E0%B8%9F00-removebg-preview.png" alt="latte">
-                <p>ราคา: 55 บาท</p>
-                <div class="option-group">
-                    <label>หวาน:</label>
-                    <select class="sweetness">
-                        <option value="0%">0%</option>
-                        <option value="50%">50%</option>
-                         <option value="100%">100%</option>
-                        </select>
-                   </div>
-                   <div class="option-group">
-                       <label>จำนวน:</label>
-                    <input type="number" class="quantity" value="1" min="1">
-                </div>
-                <button onclick="addToCart('ลาเต้', 55, this)">เพิ่มลงตะกร้า</button>
-              </div>
 
-    
-            <div class="drink">
-                <h3>มอคค่า</h3>
-                <img src="https://assets.onecompiler.app/433gecjsy/43bprtgr8/US000100-Iced-Mocha-removebg-preview.png" alt="mocha">
-                <p>ราคา: 55 บาท</p>
-                <div class="option-group">
-                    <label>หวาน:</label>
-                    <select class="sweetness">
-                        <option value="0%">0%</option>
-                        <option value="50%">50%</option>
-                        <option value="100%">100%</option>
-                    </select>
-                </div>
-                <div class="option-group">
-                    <label>จำนวน:</label>
-                    <input type="number" class="quantity" value="1" min="1">
-                </div>
-                <button onclick="addToCart('มอคค่า', 55, this)">เพิ่มลงตะกร้า</button>
-            </div>
-
-
-            <div class="drink">
-                <h3>กาเเฟส้ม</h3>
-                <img src="https://assets.onecompiler.app/433gecjsy/43bprtgr8/erasebg-transformed%20(4).png" alt="orange Coffee">
-                <p>ราคา: 55 บาท</p>
-                <div class="option-group">
-                    <label>หวาน:</label>
-                    <select class="sweetness">
-                        <option value="0%">0%</option>
-                        <option value="50%">50%</option>
-                        <option value="100%">100%</option>
-                    </select>
-                </div>
-                <div class="option-group">
-                    <label>จำนวน:</label>
-                    <input type="number" class="quantity" value="1" min="1">
-                </div>
-                <button onclick="addToCart('กาเเฟส้ม', 55, this)">เพิ่มลงตะกร้า</button>
-            </div>
-            </section>
-
-      
-                <div class="drink">
-                <h3>คาปูชิโน่</h3>
-                <img src="https://assets.onecompiler.app/433gecjsy/43bprtgr8/how-they-made-iced-latte-removebg-preview.png" alt="capuchino">
-                <p>ราคา: 55 บาท</p>
-                <div class="option-group">
-                    <label>หวาน:</label>
-                    <select class="sweetness">
-                        <option value="0%">0%</option>
-                        <option value="50%">50%</option>
-                        <option value="100%">100%</option>
-                    </select>
-                </div>
-                <div class="option-group">
-                    <label>จำนวน:</label>
-                    <input type="number" class="quantity" value="1" min="1">
-                </div>
-                <button onclick="addToCart('คาปูชิโน่', 55, this)">เพิ่มลงตะกร้า</button>
-            </div>
-        </section>
-
-        
-            <div class="drink">
-            <h3>เอสเพรสโซ</h3>
-            <img src="https://assets.onecompiler.app/433gecjsy/43bprtgr8/signature_ultraman-removebg-preview.png" alt="espresso">
-            <p>ราคา: 55 บาท</p>
+        <div class="drink">
+            <h3>อเมริกาโน่พีช</h3>
+            <h4>Peach Americano</h4>
+            <img src="Images/Peach Americano.png" alt="Peach Americano">
+            <p>ราคา: 60 บาท</p>
             <div class="option-group">
                 <label>หวาน:</label>
                 <select class="sweetness">
@@ -155,33 +77,196 @@
                 <label>จำนวน:</label>
                 <input type="number" class="quantity" value="1" min="1">
             </div>
-            <button onclick="addToCart('เอสเพรสโซ', 55, this)">เพิ่มลงตะกร้า</button>
+            <button onclick="addToCart('อเมริกาโน่พีช', 60, this)">เพิ่มลงตะกร้า</button>
         </div>
-    </section>
-    
+       
+            <div class="drink">
+                <h3>อเมริกาโน่มะพร้าว</h3>
+                <h4>Coconut Americano</h4>
+                <img src="Images/Coconut Americano.png" alt="Coconut Americano">
+                <p>ราคา: 70 บาท</p>
+                <div class="option-group">
+                    <label>หวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <button onclick="addToCart('อเมริกาโน่มะพร้าว', 70, this)">เพิ่มลงตะกร้า</button>
+        </div>
+
+             <div class="drink">
+                <h3>กาเเฟส้ม</h3>
+                <h4>Americano Orange</h4>
+                <img src="Images/Americano Orenge.png" alt="Americano Orange">
+                <p>ราคา: 70 บาท</p>
+                <div class="option-group">
+                    <label>หวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <button onclick="addToCart('กาเเฟส้ม', 70, this)">เพิ่มลงตะกร้า</button>
+        </div>
+
+            <div class="drink">
+                <h3>เอสเพรสโซ</h3>
+                <h4>Espresso</h4>
+                <img src="Images/Espresso.png" alt="espresso">
+                <p>ราคา: 60 บาท</p>
+                <div class="option-group">
+                    <label>หวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <button onclick="addToCart('เอสเพรสโซ', 60, this)">เพิ่มลงตะกร้า</button>
+        </div>
+
+            <div class="drink">
+                <h3>ลาเต้</h3>
+                <h4>Cafe Latte</h4>
+                <img src="Images/Cofe Latte.png" alt="Cafe latte">
+                <p>ราคา: 65 บาท</p>
+                <div class="option-group">
+                    <label>หวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                         <option value="100%">100%</option>
+                        </select>
+                   </div>
+                   <div class="option-group">
+                       <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <button onclick="addToCart('ลาเต้', 65, this)">เพิ่มลงตะกร้า</button>
+        </div>
+
         <div class="drink">
-        <h3>กาเเฟพีช</h3>
-        <img src="https://assets.onecompiler.app/433gecjsy/43bprtgr8/maxresdefault-removebg-preview.png" alt="peach cofee">
-        <p>ราคา: 60 บาท</p>
-        <div class="option-group">
-            <label>หวาน:</label>
-            <select class="sweetness">
-                <option value="0%">0%</option>
-                <option value="50%">50%</option>
-                <option value="100%">100%</option>
-            </select>
+                <h3>ลาเต้ สตรอเบอรี่</h3>
+                <h4>Latte  Strawberry Shake</h4>
+                <img src="Images/Latte Strawberry Shake.png" alt="Latte Strawberry Shake">
+                <p>ราคา: 80 บาท</p>
+                <div class="option-group">
+                    <label>หวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                         <option value="100%">100%</option>
+                        </select>
+                   </div>
+                   <div class="option-group">
+                       <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <button onclick="addToCart('ลาเต้ สตรอเบอรี่ Shake', 80, this)">เพิ่มลงตะกร้า</button>
         </div>
-        <div class="option-group">
-            <label>จำนวน:</label>
-            <input type="number" class="quantity" value="1" min="1">
+
+             <div class="drink">
+                <h3>ลาเต้วานิลา</h3>
+                <h4>Vanilla Latte</h4>
+                <img src="Images/Vanilla Latte.png" alt="Vanilla Latte">
+                <p>ราคา: 65 บาท</p>
+                <div class="option-group">
+                    <label>หวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                         <option value="100%">100%</option>
+                        </select>
+                   </div>
+                   <div class="option-group">
+                       <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <button onclick="addToCart('ลาเต้วานิลา', 65, this)">เพิ่มลงตะกร้า</button>
         </div>
-        <button onclick="addToCart('กาเเฟพีช', 60, this)">เพิ่มลงตะกร้า</button>
-    </div>
-    </section>
+
+                <div class="drink">
+                <h3>คาราเมลมคิอโต้</h3>
+                <h4>Caramel Macchiato</h4>
+                <img src="Images/Caramel Macchiato.png" alt="Caramel Macchiato">
+                <p>ราคา: 75 บาท</p>
+                <div class="option-group">
+                    <label>หวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                         <option value="100%">100%</option>
+                        </select>
+                   </div>
+                   <div class="option-group">
+                       <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <button onclick="addToCart('คาราเมลมคิอโต้', 75, this)">เพิ่มลงตะกร้า</button>
+        </div>
+
+    
+            <div class="drink">
+                <h3>มอคค่า</h3>
+                <h4>Cafe Mocho</h4>
+                <img src="Images/Cofe Latte.png" alt="mocha">
+                <p>ราคา: 70 บาท</p>
+                <div class="option-group">
+                    <label>หวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <button onclick="addToCart('มอคค่า', 70, this)">เพิ่มลงตะกร้า</button>
+            </div>
+
+
+            <div class="drink">
+                <h3>คาปูชิโน่</h3>
+                <h4>Capucchino</h4>
+                <img src="Images/Capucchino.png" alt="capuchino">
+                <p>ราคา: 70 บาท</p>
+                <div class="option-group">
+                    <label>หวาน:</label>
+                    <select class="sweetness">
+                        <option value="0%">0%</option>
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label>จำนวน:</label>
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <button onclick="addToCart('คาปูชิโน่', 70, this)">เพิ่มลงตะกร้า</button>
+            </div>
+     
     </div>
 </main>
 
 
     <script src="script.js"></script>
 </body>
+
 </html>

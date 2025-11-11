@@ -17,11 +17,13 @@
         <div class="container">
         <div class="user-info">
             <h2>ชื่อผู้สั่งซื้อ</h2>
+            
             <input type="text" id="customer-name" placeholder="กรอกชื่อของคุณ" />
         </div>
 
         <div class="table-selection">
-            <h3>เลือกโต๊ะของคุณ</h3>
+            <h2>เลือกโต๊ะของคุณ</h2>
+            
             <select id="table-selection">
                 <option value="1">โต๊ะ 1</option>
                 <option value="2">โต๊ะ 2</option>
@@ -43,7 +45,6 @@
             <h3>เลือกวิธีชำระเงิน</h3>
             <select id="payment-method" onchange="togglePaymentFields()">
                 <option value="cash">เงินสด</option>
-                <option value="transfer">โอนเงิน</option>
             </select>
 
             <div id="qr-code" class="payment-option">

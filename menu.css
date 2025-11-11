@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #cdb39a;
+    background-color: #efb4aa;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -13,7 +13,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #6b4a35;
+    background-color: #C0392B;
     padding: 20px;
     color: white;
     font-size: 30px ;
@@ -30,10 +30,10 @@ header {
     width: 90%;
     max-width: 1200px;  /* Ensure max width */
     margin: 40px auto;
-    background: #6b4a35;
+    background: #C0392B;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 15px #391a0f;
+    box-shadow: 0 0 15px #921d10;
     padding-top: 20px; /* เพิ่ม padding ให้กับเนื้อหาภายใน */
 
 
@@ -87,13 +87,13 @@ html {
 /* แสดงกรอบสีเมื่ออยู่หน้านั้น */
 .menu-category a.active {
    
-    background: #391a0f;
+    background: #8a2318;
 }
 
 
 
 .menu-category a:hover {
-    background: #391a0f;
+    background: #8a2318;
     
 }
 
@@ -106,9 +106,23 @@ h2 {
 }
 
 h1 {
-    color: #6b4226;
+    color: #C0392B;
     font-size: 32px;
     margin-bottom: 20px;
+    
+}
+
+h3 {
+    color: #C0392B;
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin: 0;
+}
+h4 {
+    color: #6b4226;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin: 0;
 }
 
 label {
@@ -211,8 +225,8 @@ input, select {
 }
 
 .drink img {
-    width: 180px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -225,7 +239,7 @@ input, select {
 button {
     width: 60%;
     padding: 10px;
-    background-color: #49291b;
+    background-color: #C0392B;
     color: white;
     border: none;
     border-radius: 5px;
@@ -233,7 +247,7 @@ button {
 }
 
 button:hover {
-    background-color: #502d1e;
+    background-color: #78261c;
 }
 
 button:disabled {
@@ -273,7 +287,7 @@ button:disabled {
 }
 
 #menu::-webkit-scrollbar-thumb, .drink-container::-webkit-scrollbar-thumb {
-    background: #6b4226; /* สีของ scrollbar */
+    background: #C0392B; /* สีของ scrollbar */
     border-radius: 5px;
 }
 
@@ -287,7 +301,7 @@ button:disabled {
     position: fixed;
     top: 20px; /* วางปุ่มให้ห่างจากด้านบน */
     left: 5px; /* วางปุ่มให้ห่างจากด้านซ้าย */
-    background-color: #6b4a35;
+    background-color: #C0392B;
     border: none;
     padding: 1px;
     width: 50px;
@@ -307,7 +321,7 @@ button:disabled {
 
     body {
         font-family: Arial, sans-serif;
-        background-color: #cdb39a;
+        background-color: #efb4aa;
         margin: 0;
         padding: 0;
         text-align: center;
@@ -412,7 +426,7 @@ html {
     width: 90%;
     max-width: 1200px;  /* Ensure max width */
     margin: 0px auto;
-    background: #6b4a35;
+    background: #C0392B;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 15px #cdb39a;
@@ -425,7 +439,7 @@ html {
     position: fixed;
     top: 20px; /* วางปุ่มให้ห่างจากด้านบน */
     left: 5px; /* วางปุ่มให้ห่างจากด้านซ้าย */
-    background-color: #6b4a35;
+    background-color: #C0392B;
     border: none;
     padding: 1px;
     width: 50px;
@@ -443,7 +457,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #6b4a35;
+    background-color: #C0392B;
     padding: 20px;
     color: white;
     font-size: 30px ;
